@@ -26,15 +26,19 @@
     "next": "11.1.0",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.2.24",
+    "next-seo": "^4.26.0",
+    "normalize-scss": "^7.0.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-id-generator": "^3.0.1",
-    "react-scroll": "^1.8.3"
+    "react-scroll": "^1.8.3",
+    "sass": "^1.37.5"
   },
   "devDependencies": {
     "@types/react": "17.0.17",
+    "@types/react-scroll": "^1.8.3",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
