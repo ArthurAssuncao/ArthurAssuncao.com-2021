@@ -1,0 +1,37 @@
+@import 'mixins';
+
+$color-background: #f7f8fa;
+$color-background-alpha: toRGBA($color-background, 0.5);
+$color-background-alt: #4d5458;
+$color-background-alt-contrast: #f7f8fa;
+$color-gray-line: #dcdde0;
+$color-text: #3c4e52;
+$color-text-alt: #fff;
+$color-text-gray: #a7a7a7;
+$color-text-label: #fff;
+$color-text-disabled: #dbdbdb;
+$color-text-highlight: #0f9ad7;
+$color-primary: #0fd7b0;
+$color-accent: #0f9ad7;
+$color-accent-active: darken(#0f9ad7, 10);
+$color-accent-alpha: rgba(15, 154, 215, 0.7);
+$color-secondary: #d74b0f;
+$color-secondary-light: lighten(#d74b0f, 10);
+$color-warning: #ffa061;
+$color-error: #ff6961;
+$color-card-shadow: rgba(15, 154, 215, 0.2);
+
+$color-background-dark: #525252;
+$color-background-dark-alpha: toRGBA($color-background-dark, 0.5);
+$color-gray-line-dark: #5a5a5a;
+$color-text-dark: #e4e4e4;
+$color-text-gray-dark: #dbdbdb;
+$color-text-label-dark: #aaaaaa;
+$color-text-disabled-dark: #686868;
+$color-container-shadow-dark: rgba(255, 255, 255, 0.5);
+
+$gradient: linear-gradient(
+  to right,
+  var(--color-accent, $color-accent) 0%,
+  var(--color-primary, $color-primary) 100%
+);
