@@ -64,6 +64,10 @@
     $color-background
   );
 
+  a {
+    transition: color 0.3s ease;
+  }
+
   a:link {
     color: var(--color-accent, $color-accent);
   }
@@ -74,6 +78,7 @@
 
   a:hover {
     color: var(--color-accent-active, $color-accent-active);
+    cursor: pointer;
   }
 
   a:active {
