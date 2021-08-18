@@ -45,9 +45,10 @@ img {
   height: auto;
   image-rendering: auto;
   image-rendering: smooth;
+  object-fit: contain;
 }
 
-@import "/node_modules/normalize-scss/sass/normalize";
+@import '/node_modules/normalize-scss/sass/normalize';
 
 button {
   cursor: pointer;
@@ -62,7 +63,7 @@ body,
 input,
 textarea,
 button {
-  font: 400 1.6rem "Montserrat", sans-serif;
+  font: 400 1.6rem 'Montserrat', sans-serif;
 }
 
 body {

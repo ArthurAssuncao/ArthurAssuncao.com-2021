@@ -1,0 +1,26 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+  overflow: hidden;
+
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img.logo {
+      position: absolute;
+      height: 6rem !important;
+      width: 100% !important;
+    }
+
+    .logoText {
+      margin-left: 1.5rem;
+      font-size: var(--text-h1, $text-h1);
+    }
+  }
+}
