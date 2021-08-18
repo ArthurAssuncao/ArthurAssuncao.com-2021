@@ -1,0 +1,283 @@
+@import '../../assets/styles/sass/resources';
+
+@keyframes menuSlideIn {
+  0% {
+    width: 0vw;
+  }
+  100% {
+    width: 80vw;
+  }
+}
+
+@keyframes menuSlideOut {
+  0% {
+    width: 80vw;
+  }
+  100% {
+    width: 0vw;
+  }
+}
+
+@keyframes overlaySlideIn {
+  0% {
+    width: 0vw;
+  }
+  100% {
+    width: 100vw;
+  }
+}
+
+@keyframes overlaySlideOut {
+  0% {
+    width: 100vw;
+  }
+  100% {
+    width: 0vw;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 7rem;
+  overflow: hidden;
+  padding: 0 3rem;
+
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img.logo {
+      position: absolute;
+      height: 6rem !important;
+      width: 100% !important;
+    }
+
+    .logoText {
+      margin-left: 1.5rem;
+      font-size: var(--text-h1, $text-h1);
+
+      @include tablet-up {
+        font-size: var(--text-h3, $text-h3);
+        width: 16rem;
+      }
+    }
+  }
+
+  .menuMobileFix {
+    @include tablet-up {
+      display: none;
+    }
+  }
+
+  .menuWrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-up {
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .menuIcon {
+      color: $color-on-background;
+      color: var(--color-on-background, $color-on-background);
+      width: 48px;
+      height: 48px;
+
+      @include tablet-up {
+        display: none;
+      }
+    }
+
+    .menu {
+      z-index: $z-index-over;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      color: $color-on-background;
+      color: var(--color-on-background, $color-on-background);
+      transition: box-shadow 1s ease;
+
+      &[data-sidemenuwilldisappear='false'] {
+        width: 0;
+      }
+
+      @include tablet-up {
+        display: flex;
+        position: relative;
+        background-color: transparent;
+        right: inherit;
+        bottom: inherit;
+        height: inherit;
+        width: 100%;
+        &[data-sidemenuwilldisappear='false'] {
+          width: 100%;
+        }
+      }
+
+      &[data-sidemenuopened='false'] {
+        &[data-sidemenuwilldisappear='true'] {
+          animation: menuSlideOut 1s forwards;
+
+          .menuOverlay {
+            animation: overlaySlideOut 0.6s forwards;
+          }
+        }
+      }
+
+      &[data-sidemenuopened='true'] {
+        // width: 80vw;
+        animation: menuSlideIn 1s forwards;
+        box-shadow-: -2px 0px 1rem $color-accent; // fallback
+        box-shadow: -2px 0px 1rem var(--color-accent, $color-accent);
+
+        .menuOverlay {
+          animation: overlaySlideIn 1s forwards;
+        }
+      }
+
+      .menuList {
+        z-index: $z-index-over;
+        height: 100vh;
+        right: 0;
+        bottom: 0;
+        background-color: $color-background;
+        background-color: var(--color-background, $color-background);
+        position: relative;
+
+        @include tablet-up {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: auto;
+          width: 100%;
+        }
+
+        @include desktop-up {
+          justify-content: space-around;
+        }
+
+        .menuItem {
+          padding: 0rem 2rem;
+          border-bottom-color: $color-gray-line;
+          border-bottom: 1px solid var(--color-gray-line, $color-gray-line);
+          transition: all 0.5s ease;
+
+          &:hover {
+            background-color: var(--color-accent, $color-accent);
+            color: var(--color-on-accent, $color-on-accent);
+
+            a {
+              color: var(--color-on-accent, $color-on-accent);
+            }
+          }
+
+          @include tablet-up {
+            border: none;
+            padding: 0;
+
+            &:hover {
+              background-color: inherit;
+              color: inherit;
+
+              a {
+                color: inherit;
+              }
+            }
+          }
+
+          .menuItemLink {
+            @include tablet-up {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              position: relative;
+
+              &:after {
+                content: attr(data-to);
+                letter-spacing: 0.3rem;
+                opacity: 0;
+                padding: 0 0;
+                padding: 0 1.5rem;
+                transform: translateY(-150%);
+                position: relative;
+                z-index: -1;
+              }
+            }
+
+            .menuItemLinkText {
+              display: block;
+              width: 100%;
+              height: 100%;
+              padding: 1.5rem 0;
+              text-align: center;
+              transition: all 0.5s ease;
+
+              @include tablet-up {
+                padding: 1.5rem;
+                letter-spacing: 0rem;
+                transform: translateY(15%);
+
+                &:hover {
+                  letter-spacing: 0.3rem;
+                  padding: 1.5rem 0;
+
+                  &:after,
+                  &:before {
+                    backface-visibility: hidden;
+                    border-color: $gradient;
+                    border-color: var(--gradient, $gradient);
+                    transition: width 0.3s ease-in-out;
+                    width: 100%;
+                  }
+                }
+              }
+
+              @include tablet-up {
+                &:after,
+                &:before {
+                  backface-visibility: hidden;
+                  border: 1px solid rgba(#fff, 0);
+                  bottom: 0px;
+                  content: ' ';
+                  display: block;
+                  margin: 0 auto;
+                  position: relative;
+                  transition: all 300ms ease-in-out;
+                  width: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .menuOverlay {
+        position: absolute;
+        z-index: #{$z-index-over - 1};
+        right: 0;
+        bottom: 0;
+        opacity: 0.8;
+        height: 100vh;
+
+        transition: width 1.5s ease;
+        background-color: var(
+          --color-background-alpha,
+          $color-background-alpha
+        );
+
+        &[data-sidemenuwilldisappear='false'] {
+          width: 0vw;
+        }
+
+        @include tablet-up {
+          display: none;
+        }
+      }
+    }
+  }
+}

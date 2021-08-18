@@ -3,54 +3,149 @@
 
 :root,
 :root body[data-theme='light'] {
+  // Primary, accent, secondary and its variants
+  --color-primary: #{$color-primary};
+  --color-accent: #{$color-accent};
+  --color-accent-active: #{$color-accent-active};
+  --color-secondary: #{$color-secondary};
+  --color-secondary-light: #{$color-secondary-light};
+
+  // Background
   --color-background: #{$color-background};
   --color-background-alpha: #{$color-background-alpha};
   --color-background-alt: #{$color-background-alt};
   --color-background-alt-contrast: #{$color-background-alt-contrast};
-  --color-gray-line: #{$color-gray-line};
-  --color-text: #{$color-text};
-  --color-text-alt: #{$color-text-alt};
-  --color-text-label: #{$color-text-label};
+
+  // On colors and texts
+  --color-on-primary: #{$color-on-primary};
+  --color-on-accent: #{$color-on-accent};
+  --color-on-background: #{$color-on-background};
+  --color-on-background-alt: #{$color-on-background-alt};
   --color-text-gray: #{$color-text-gray};
+  --color-text-label: #{$color-text-label};
   --color-text-disabled: #{$color-text-disabled};
   --color-text-highlight: #{$color-text-highlight};
-  --color-primary: #{$color-primary};
-  --color-accent: #{$color-accent};
-  --color-accent-active: #{$color-accent-active};
-  --color-secondary: #{$color-secondary};
-  --color-secondary-light: #{$color-secondary-light};
+
+  // Others colors
+  --color-gray-line: #{$color-gray-line};
+  --color-container-shadow: #{$color-container-shadow};
+
+  // Semantic Colors
   --color-warning: #{$color-warning};
   --color-error: #{$color-error};
-  --color-card-shadow: #{$color-card-shadow};
+  --color-success: #{$color-success};
+  --color-info: #{$color-info};
+
+  // Neutral colors
+  --color-gray: #{$color-gray};
+  --color-gray-light: #{$color-gray-light};
+
+  // Gradients
   --gradient: #{$gradient};
+
+  accent-color: var(--color-accent, $color-accent);
+  caret-color: var(--color-gray, $color-gray);
+  text-decoration-color: var(--color-accent, $color-accent);
+  column-rule-color: var(--color-gray, $color-gray);
+
+  @include property_compat(
+    'background-color',
+    --color-background,
+    $color-background
+  );
+  @include property_compat(
+    'color',
+    --color-on-background,
+    $color-on-background
+  );
+  @include property_compat(
+    'background-color',
+    --color-background,
+    $color-background
+  );
+
+  a {
+    transition: color 0.3s ease;
+  }
+
+  a:link {
+    color: var(--color-accent, $color-accent);
+  }
+
+  a:visited {
+    color: var(--color-accent-active, $color-accent-active);
+  }
+
+  a:hover {
+    color: var(--color-accent-active, $color-accent-active);
+    cursor: pointer;
+  }
+
+  a:active {
+    color: var(--color-accent-active, $color-accent-active);
+  }
+
+  ::selection {
+    @include property_compat('color', --color-background, $color-background);
+    @include property_compat(
+      'background-color',
+      --color-accent-alpha,
+      $color-accent-alpha
+    );
+  }
 }
 
 :root body[data-theme='dark'] {
-  --color-background: #{$color-background-dark};
-  --color-background-alpha: #{$color-background-dark-alpha};
-  --color-background-alt: #{$color-background-alt};
-  --color-gray-line: #{$color-gray-line-dark};
-  --color-text: #{$color-text-dark};
-  --color-text-alt: #{$color-text-alt};
-  --color-text-label: #{$color-text-label-dark};
-  --color-text-gray: #{$color-text-gray-dark};
-  --color-text-disabled: #{$color-text-disabled-dark};
-  --color-text-highlight: #{$color-text-highlight};
-  --color-primary: #{$color-primary};
-  --color-accent: #{$color-accent};
-  --color-accent-active: #{$color-accent-active};
-  --color-secondary: #{$color-secondary};
-  --color-secondary-light: #{$color-secondary-light};
-  --color-warning: #{$color-warning};
-  --color-error: #{$color-error};
-  --color-container-shadow: #{$color-container-shadow-dark};
-}
+  // Primary, accent, secondary and its variants
+  // --color-dark-primary: #{$color-dark-primary};
+  // --color-dark-accent: #{$color-dark-accent};
+  // --color-dark-accent-active: #{$color-dark-accent-active};
+  // --color-dark-secondary: #{$color-dark-secondary};
+  // --color-dark-secondary-light: #{$color-dark-secondary-light};
 
-::selection {
-  @include property_compat('color', --color-background, $color-background);
-  @include property_compat(
-    'background-color',
-    --color-text-highlight,
-    $color-text-highlight
-  );
+  // Background
+  --color-dark-background: #{$color-dark-background};
+  --color-dark-background-alpha: #{$color-dark-background-alpha};
+  --color-dark-background-alt: #{$color-dark-background-alt};
+  --color-dark-background-alt-contrast: #{$color-dark-background-alt-contrast};
+
+  // On colors and texts
+  // --color-dark-on-primary: #{$color-dark-on-primary};
+  // --color-dark-on-accent: #{$color-dark-on-accent};
+  --color-dark-on-background: #{$color-dark-on-background};
+  --color-dark-on-background-alt: #{$color-dark-on-background-alt};
+  --color-dark-text-gray: #{$color-dark-text-gray};
+  --color-dark-text-label: #{$color-dark-text-label};
+  --color-dark-text-disabled: #{$color-dark-text-disabled};
+  // --color-dark-text-highlight: #{$color-dark-text-highlight};
+
+  // Others colors
+  --color-dark-gray-line: #{$color-dark-gray-line};
+  --color-dark-container-shadow: #{$color-dark-container-shadow};
+
+  // Semantic Colors
+  --color-dark-warning: #{$color-dark-warning};
+  --color-dark-error: #{$color-dark-error};
+  --color-dark-success: #{$color-dark-success};
+  --color-dark-info: #{$color-dark-info};
+
+  // Neutral colors
+  --color-dark-gray: #{$color-dark-gray};
+  --color-dark-gray-light: #{$color-dark-gray-light};
+
+  // Gradients
+  // --gradient-dark: #{$gradient-dark};
+
+  ::selection {
+    @include property_compat(
+      'color',
+      --color-dark-background,
+      $color-dark-background
+    );
+    @include property_compat(
+      'background-color',
+      --color-accent-alpha,
+      $color-accent-alpha
+    );
+  }
 }

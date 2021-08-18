@@ -7,10 +7,6 @@
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-::selection {
-  background: var(--color-accent-alpha, $color-accent-alpha);
-}
-
 html,
 body {
   padding: 0;
@@ -35,17 +31,6 @@ html {
 
 body {
   @include property_compat('font-size', --text-body, $text-body);
-  @include property_compat(
-    'background-color',
-    --color-background,
-    $color-background
-  );
-  @include property_compat('color', --color-text, $color-text);
-  @include property_compat(
-    'background-color',
-    --color-background,
-    $color-background
-  );
   display: flex;
   align-items: center;
   justify-content: flex-start;

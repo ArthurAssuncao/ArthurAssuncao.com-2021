@@ -1,0 +1,36 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  color: inherit;
+  width: 100%;
+  height: 100%;
+
+  padding: 8px;
+
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+
+  grid-gap: 0.7rem;
+  gap: 0.7rem;
+
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+
+  &[data-menuiconopen='true'] {
+    transform: rotate(-270deg);
+    .spot {
+      &:nth-child(even) {
+        opacity: 0;
+      }
+    }
+  }
+
+  .spot {
+    background-color: var(--color-on-background, $color-on-background);
+    background-color: currentColor;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+  }
+}
