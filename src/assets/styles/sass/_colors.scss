@@ -42,7 +42,7 @@ $color-gray-light: #dbdbdb;
 $gradient: linear-gradient(
   to right,
   var(--color-accent, $color-accent) 0%,
-  var(--color-primary, $color-primary) 100%
+  var(--color-secondary, $color-secondary) 100%
 );
 
 // Dark colors
