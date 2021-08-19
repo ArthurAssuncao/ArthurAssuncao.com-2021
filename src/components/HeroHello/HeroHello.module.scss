@@ -1,0 +1,228 @@
+@use 'sass:math';
+@import '../../assets/styles/sass/resources';
+
+$border-size: 4px;
+
+@keyframes text-animation {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+@keyframes border-animation-top {
+  from {
+    border-top-width: $border-size;
+    height: $border-size;
+    width: 0;
+    top: 0;
+    left: 0;
+  }
+  to {
+    border-top-width: $border-size;
+    height: $border-size;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+
+@keyframes border-animation-right {
+  from {
+    border-right-width: $border-size;
+  }
+  to {
+    border-right-width: $border-size;
+    height: 100%;
+  }
+}
+
+@keyframes border-animation-bottom {
+  from {
+    border-bottom-width: $border-size;
+    height: $border-size;
+    width: 0;
+    right: 0;
+    bottom: 0;
+  }
+  to {
+    border-bottom-width: $border-size;
+    height: $border-size;
+    width: 100%;
+    right: 0;
+  }
+}
+
+@keyframes border-animation-left {
+  from {
+    border-left-width: $border-size;
+    left: 0;
+  }
+  to {
+    border-left-width: $border-size;
+    height: 100%;
+    left: 0;
+  }
+}
+
+$num-projects: 4;
+
+@keyframes projects-flip {
+  $time-delay: 15;
+  @for $i from 1 through $num-projects {
+    $newI: $i - 1;
+    $perc: $newI * math.div(100, $num-projects);
+    $untilPerc: $perc + $time-delay;
+    #{$perc}%,
+    #{$untilPerc}% {
+      transform: translateY(#{$newI * -100%});
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-evenly;
+  flex: 1;
+
+  .image {
+    display: none;
+
+    @include tablet-up {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25%;
+    }
+  }
+
+  .presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: relative;
+    padding: 0 2rem;
+
+    .title {
+      font-size: var(--text-h1, $text-h1);
+      font-weight: bold;
+      color: var(--color-on-background-alt, $color-on-background-alt);
+      // text-shadow: 0px 1px 3px var(--color-accent, $color-on-background-alt);
+    }
+
+    .projects {
+      font-size: var(--text-h5, $text-h5);
+      line-height: var(--text-h1, $text-h1);
+      font-weight: bold;
+      overflow: hidden;
+      height: var(--text-h1, $text-h1);
+      padding-left: 5rem;
+      margin: 1rem 0;
+      color: var(--color-accent, $color-accent);
+
+      @include tablet-up {
+        margin: 2.5rem 0;
+      }
+
+      .project {
+        animation: projects-flip $num-projects * 2s ease infinite alternate;
+        display: flex;
+        align-items: center;
+
+        .projectIcon {
+          vertical-align: middle;
+        }
+
+        .projectText {
+          margin-left: 0.5rem;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .textWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex: 1;
+
+      .textInnerWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+
+        $time-animation: 3s;
+        $time-delay: 0s;
+
+        &:after,
+        &:before {
+          content: '';
+          z-index: -1;
+          position: absolute;
+          border: 0px solid
+            var(--color-on-background-alt, $color-on-background-alt);
+        }
+
+        &:before {
+          animation: border-animation-top $time-animation $time-delay ease
+              forwards,
+            border-animation-right $time-animation
+              ($time-delay + $time-animation) ease forwards;
+        }
+
+        $time-delay: $time-animation * 2;
+
+        &:after {
+          animation: border-animation-bottom $time-animation $time-delay ease
+              forwards,
+            border-animation-left $time-animation
+              ($time-delay + $time-animation) ease forwards;
+        }
+
+        .text {
+          font-size: var(--text-h1, $text-h1);
+          font-weight: bold;
+          animation: text-animation 5s ease infinite alternate;
+          background-clip: text;
+          text-fill-color: transparent;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-color: var(
+            --color-on-background-alt,
+            $color-on-background-alt
+          );
+          background-image: linear-gradient(
+            to right,
+            var(--color-accent, $color-accent) 0%,
+            var(--color-accent, $color-accent) 100%
+          );
+          background-size: 0% 100%;
+          background-position: left;
+          background-repeat: no-repeat;
+
+          @include tablet-up {
+            &:nth-child(2) {
+              margin: 1rem 0;
+            }
+          }
+        }
+
+        .description {
+          font-size: var(--text-h5, $text-h5);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

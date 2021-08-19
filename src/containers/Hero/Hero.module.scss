@@ -1,0 +1,30 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .heroHelloWrapper {
+    background-color: var(--color-background-alt, $color-background-alt);
+    color: var(--color-on-background-alt, $color-on-background-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet-up {
+      min-height: 25rem;
+    }
+  }
+
+  .heroAboutWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heroHelloWrapper,
+  .heroAboutWrapper {
+    padding: 3rem 2.5rem;
+  }
+}

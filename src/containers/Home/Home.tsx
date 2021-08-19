@@ -1,6 +1,7 @@
 import React from 'react';
 import { Element } from 'react-scroll';
 import { Header } from '../Header';
+import { Hero } from '../Hero';
 import styles from './Home.module.scss';
 
 const Home = (): JSX.Element => {
@@ -8,8 +9,9 @@ const Home = (): JSX.Element => {
     <div className={styles.container}>
       {/* Header */}
       <div className={styles.containerHeader}>
-        <Header />
+        <Header className={styles.header} />
         {/* Hero */}
+        <Hero className={styles.hero} />
       </div>
 
       {/* Main */}

@@ -42,17 +42,19 @@ const NavBar = (props: NavBarProps): JSX.Element => {
     <nav className={classNames(className, styles.container)}>
       <div className={styles.menuMobileFix}></div>
       <Link href="/" passHref={true}>
-        <div className={styles.logoWrapper}>
-          <Image
-            src={Logo}
-            alt="Logo"
-            height={60}
-            width={41}
-            className={styles.logo}
-          />
+        <a>
+          <div className={styles.logoWrapper}>
+            <Image
+              src={Logo}
+              alt="Logo"
+              height={60}
+              width={41}
+              className={styles.logo}
+            />
 
-          <span className={styles.logoText}>Assuncao</span>
-        </div>
+            <span className={styles.logoText}>Assuncao</span>
+          </div>
+        </a>
       </Link>
 
       <div className={styles.menuWrapper}>
