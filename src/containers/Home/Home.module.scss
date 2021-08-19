@@ -1,0 +1,40 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background, $color-background);
+
+  .containerHeader {
+    min-height: max(768px, 100vh);
+    height: max(768px, 100vh);
+    position: relative;
+    width: 100vw;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2.5rem;
+
+    .section {
+      @include desktop-up {
+        width: 80vw;
+      }
+    }
+  }
+
+  .buttonToTop {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+
+    @include tablet-up {
+    }
+  }
+}

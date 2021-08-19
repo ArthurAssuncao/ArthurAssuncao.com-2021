@@ -1,0 +1,76 @@
+@import 'mixins';
+
+// Primary, accent, secondary and its variants
+$color-primary: #131313;
+$color-accent: #ff5f1f;
+$color-accent-active: darken(#ff5f1f, 10);
+$color-accent-alpha: rgba(255, 95, 31, 0.7);
+$color-secondary: #1fbfff;
+$color-secondary-light: lighten(#1fbfff, 10);
+
+// Background
+$color-background: #131313;
+$color-background-alpha: toRGBA($color-background, 0.5);
+$color-background-alt: #fff;
+$color-background-alt-contrast: #f7f8fa;
+
+// On colors and texts
+$color-on-primary: #fff;
+$color-on-accent: #222;
+$color-on-background: #fff;
+$color-on-background-alt: #222;
+$color-text-gray: #a7a7a7;
+$color-text-label: #fff;
+$color-text-disabled: #dbdbdb;
+$color-text-highlight: #ff5f1f;
+
+// Others colors
+$color-gray-line: #dcdde0;
+$color-container-shadow: rgba(15, 154, 215, 0.2);
+
+// Semantic Colors
+$color-warning: #ffbb33;
+$color-error: #ff4444;
+$color-success: #00c851;
+$color-info: #33b5e5;
+
+// Neutral colors
+$color-gray: #a7a7a7;
+$color-gray-light: #dbdbdb;
+
+// Gradients
+$gradient: linear-gradient(
+  to right,
+  var(--color-accent, $color-accent) 0%,
+  var(--color-secondary, $color-secondary) 100%
+);
+
+// Dark colors
+// Dark Primary, accent, secondary and its variants
+
+// Dark Background
+$color-dark-background: #131313;
+$color-dark-background-alpha: toRGBA($color-dark-background, 0.5);
+$color-dark-background-alt: #fff;
+$color-dark-background-alt-contrast: #f7f8fa;
+
+// Dark On colors and texts
+$color-dark-on-background: #e4e4e4;
+$color-dark-on-background-alt: #e4e4e4;
+$color-dark-text-gray: #dbdbdb;
+$color-dark-text-label: #aaaaaa;
+$color-dark-text-disabled: #686868;
+
+// Dark Others colors
+$color-dark-gray-line: #5a5a5a;
+$color-dark-container-shadow: rgba(255, 255, 255, 0.5);
+
+// Dark Semantic Colors
+$color-dark-warning: #ff8800;
+$color-dark-error: #cc0000;
+$color-dark-success: #007e33;
+$color-dark-info: #0099cc;
+
+// Dark Neutral colors
+$color-dark-gray: #5a5a5a;
+$color-dark-gray-light: #aaaaaa;
