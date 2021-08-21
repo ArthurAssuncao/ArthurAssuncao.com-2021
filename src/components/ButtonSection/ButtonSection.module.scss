@@ -1,0 +1,29 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  position: absolute;
+
+  .title {
+    display: inline-block;
+    position: absolute;
+    transform: translateY(-50%);
+    left: 0;
+    padding: 1rem 2rem;
+    font-weight: bold;
+  }
+
+  &:before {
+    content: attr(data-title);
+    background-color: var(--color-accent, $color-accent);
+    color: rgba(0, 0, 0, 0);
+    font-weight: bold;
+    opacity: 0.85;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    transform: translateY(-50%);
+    box-shadow: 0 0 1rem var(--color-background-alpha, $color-background-alpha);
+  }
+}
