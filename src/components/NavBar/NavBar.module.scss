@@ -46,6 +46,14 @@ $navbarHeight: 7rem;
   overflow: hidden;
   padding: 0 2rem;
 
+  @include tablet-up {
+    max-width: $max-page-size-tablet;
+  }
+  @include desktop-big-up {
+    max-width: $max-page-size-desktop-big;
+    width: $max-page-size-desktop;
+  }
+
   .logoWrapper {
     display: flex;
     align-items: center;
@@ -60,10 +68,11 @@ $navbarHeight: 7rem;
     .logoText {
       margin-left: 1.5rem;
       font-size: var(--text-h1, $text-h1);
+      color: var(--color-on-background, $color-on-background);
 
       @include tablet-up {
-        font-size: var(--text-h3, $text-h3);
-        width: 16rem;
+        font-size: var(--text-h2, $text-h2);
+        width: 17rem;
       }
     }
   }
@@ -200,12 +209,12 @@ $navbarHeight: 7rem;
               flex-direction: column;
               align-items: center;
               position: relative;
+              font-size: var(--text-h6, $text-h6);
 
               &:after {
                 content: attr(data-to);
                 letter-spacing: 0.3rem;
                 opacity: 0;
-                padding: 0 0;
                 padding: 0 1.5rem;
                 transform: translateY(-150%);
                 position: relative;

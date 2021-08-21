@@ -34,7 +34,11 @@ const HeroHello = (props: HeroHelloProps): JSX.Element => {
 
   return (
     <div className={classNames(className, styles.container)}>
-      <ProjectRandomImage className={styles.image} startUpdate={true} />
+      <ProjectRandomImage
+        className={styles.image}
+        startUpdate={true}
+        timeUpdate={3000}
+      />
       <div className={styles.presentation}>
         <span className={styles.title}>Know my projects</span>
         <ul className={styles.projects}>
@@ -59,7 +63,11 @@ const HeroHello = (props: HeroHelloProps): JSX.Element => {
           </div>
         </div>
       </div>
-      <ProjectRandomImage className={styles.image} startUpdate={false} />
+      <ProjectRandomImage
+        className={styles.image}
+        startUpdate={false}
+        timeUpdate={3000}
+      />
     </div>
   );
 };

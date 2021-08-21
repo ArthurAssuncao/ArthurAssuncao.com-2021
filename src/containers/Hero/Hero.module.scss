@@ -15,12 +15,32 @@
     @include tablet-up {
       min-height: 25rem;
     }
+
+    .heroHello {
+      @include tablet-up {
+        max-width: $max-page-size-tablet;
+      }
+      @include desktop-big-up {
+        max-width: $max-page-size-desktop-big;
+        width: $max-page-size-desktop;
+      }
+    }
   }
 
   .heroAboutWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .heroAbout {
+      @include tablet-up {
+        max-width: $max-page-size-tablet;
+      }
+      @include desktop-big-up {
+        max-width: $max-page-size-desktop-big;
+        width: $max-page-size-desktop;
+      }
+    }
   }
 
   .heroHelloWrapper,

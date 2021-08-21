@@ -10,7 +10,7 @@ const Header = (props: HeaderProps): JSX.Element => {
   const { className } = props;
   return (
     <header className={classNames(className, styles.container)}>
-      <NavBar />
+      <NavBar className={styles.navbar} />
     </header>
   );
 };
