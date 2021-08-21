@@ -15,10 +15,11 @@ import styles from './ProjectRandomImage.module.scss';
 interface ProjectRandomImageProps {
   className?: string;
   startUpdate: boolean;
+  timeUpdate: number;
 }
 
 const ProjectRandomImage = (props: ProjectRandomImageProps): JSX.Element => {
-  const { className, startUpdate } = props;
+  const { className, startUpdate, timeUpdate } = props;
   const [willUpdate, setWillUpdate] = useState(startUpdate);
 
   const images = [
@@ -45,14 +46,14 @@ const ProjectRandomImage = (props: ProjectRandomImageProps): JSX.Element => {
         setIndexImage(generateRandom());
       }
       setWillUpdate((prev) => !prev);
-    }, 3000);
+    }, timeUpdate);
 
     return () => {
       if (countDownTimeout) {
         workerTimers.clearTimeout(countDownTimeout);
       }
     };
-  }, [generateRandom, images.length, willUpdate]);
+  }, [generateRandom, images.length, willUpdate, timeUpdate]);
 
   return (
     <div className={classNames(className, styles.container)}>
@@ -61,6 +62,7 @@ const ProjectRandomImage = (props: ProjectRandomImageProps): JSX.Element => {
         alt="Screenshot de um projeto"
         width={220}
         height={450}
+        className={styles.animation}
       />
     </div>
   );
