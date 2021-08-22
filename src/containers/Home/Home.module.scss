@@ -10,7 +10,7 @@
 
   .containerHeader {
     min-height: max(768px, 100vh);
-    height: max(768px, 100vh);
+    // height: max(768px, 100vh);
     position: relative;
     width: 100vw;
   }
@@ -20,11 +20,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 2.5rem;
+    padding: 0;
 
     .section {
-      @include desktop-up {
-        width: 80vw;
+      min-height: 50vh;
+      width: 100vw;
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+
+      &.myJourneyWrapper {
+        background-color: var(--color-background-alt, $color-background-alt);
+        .myJourney {
+          @include desktop-up {
+            width: 80vw;
+          }
+        }
       }
     }
   }
