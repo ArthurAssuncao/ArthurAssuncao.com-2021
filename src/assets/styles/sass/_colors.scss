@@ -3,14 +3,14 @@
 // Primary, accent, secondary and its variants
 $color-primary: #131313;
 $color-accent: #ff5f1f;
-$color-accent-active: darken(#ff5f1f, 10);
+$color-accent-active: darken(#ff5f1f, 15);
 $color-accent-alpha: rgba(255, 95, 31, 0.7);
 $color-secondary: #1fbfff;
 $color-secondary-light: lighten(#1fbfff, 10);
 
 // Background
 $color-background: #131313;
-$color-background-alpha: toRGBA($color-background, 0.5);
+$color-background-alpha: toRGBA($color-background, 0.9);
 $color-background-alt: #fff;
 $color-background-alt-contrast: #f7f8fa;
 

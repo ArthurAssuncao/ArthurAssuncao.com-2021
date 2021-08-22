@@ -18,13 +18,17 @@
     "release:patch": "standard-version --release-as patch",
     "release:major": "standard-version --release-as major",
     "new:feature": "git checkout -b ",
-    "merge:feature": "git checkout develop && git merge --no-ff ",
+    "merge": "git merge --no-ff ",
+    "merge:to:develop": "git checkout develop && git merge --no-ff ",
     "pr": "gh pr create --base main && git branch -D `git branch | grep -E '(feature)'`"
   },
   "dependencies": {
     "@iconify/icons-bx": "^1.1.2",
+    "@iconify/icons-cil": "^1.1.0",
+    "@iconify/icons-ic": "^1.1.9",
     "@iconify/react": "^3.0.1",
     "classnames": "^2.3.1",
+    "html-react-parser": "^1.2.8",
     "next": "11.1.0",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.2.24",
@@ -36,12 +40,14 @@
     "react-dom": "17.0.2",
     "react-id-generator": "^3.0.1",
     "react-scroll": "^1.8.3",
+    "react-vertical-timeline-component": "^3.3.3",
     "sass": "^1.37.5",
     "worker-timers": "^7.0.37"
   },
   "devDependencies": {
     "@types/react": "17.0.17",
     "@types/react-scroll": "^1.8.3",
+    "@types/react-vertical-timeline-component": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",

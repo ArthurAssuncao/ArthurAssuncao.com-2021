@@ -1,0 +1,112 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  .title {
+  }
+
+  .timeline {
+    @media (min-width: 1170px) {
+      margin-top: 2rem;
+    }
+
+    --timeline-background: var(--color-background, $color-background);
+
+    &:before {
+      background-color: var(--timeline-background, $color-background);
+    }
+
+    .timelineItem {
+      // &:hover {
+      //   --timeline-background: var(
+      //     --color-background-alpha,
+      //     $color-background-alpha
+      //   );
+      // }
+
+      // get icon
+      > span:nth-child(1) {
+        background-color: var(--timeline-background, $color-background);
+        transition: background-color 0.5s ease;
+        box-shadow: 0 0 0 4px var(--timeline-background, $color-background),
+          0 3px 5px 4px var(--color-background-alpha, $color-background-alpha);
+
+        .timelineItemIcon {
+          color: var(--color-accent, $color-accent);
+        }
+      }
+
+      .timelineContainer {
+        background-color: var(--timeline-background, $color-background);
+        transition: background-color 0.5s ease;
+
+        > div:first-child {
+          border-right: 7px solid var(--timeline-background, $color-background);
+        }
+      }
+
+      .timelineItemTitleWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .timelineItemTitle {
+          font-size: var(--text-h5, $text-h5);
+        }
+
+        .timelineItemLink {
+          // background-color: var(--color-accent, $color-accent);
+          padding: 0.8rem 1rem 0.5rem 1rem;
+          border-radius: 5px;
+          border-top-right-radius: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: var(--color-accent, $color-accent);
+          transition: all 0.5s ease;
+          font-size: var(--text-h5);
+
+          &:hover {
+            background-color: var(--color-accent-active, $color-accent-active);
+            color: var(--color-on-accent, $color-on-accent);
+          }
+        }
+      }
+      .timelineItemSubtitle {
+        font-size: var(--text-caption, $text-caption);
+        color: var(--color-gray, $color-gray);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .timelineItemSubtitleDate {
+        }
+      }
+
+      .timelineItemDate {
+        font-size: var(--text-caption, $text-caption);
+        padding: 0;
+        display: none;
+      }
+
+      .timelineItemDescription {
+        font-size: var(--text-caption, $text-caption);
+        line-height: var(--text-h6, $text-h6);
+
+        a {
+          color: var(--color-on-background, $color-on-background);
+          text-decoration: underline;
+          text-decoration-style: dotted;
+
+          &:hover {
+            text-decoration: none;
+            color: var(--color-accent, $color-accent);
+          }
+        }
+      }
+    }
+  }
+}
