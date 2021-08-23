@@ -45,6 +45,7 @@ $navbarHeight: 7rem;
   height: $navbarHeight;
   overflow: hidden;
   padding: 0 2rem;
+  flex: 1;
 
   @include tablet-up {
     max-width: $max-page-size-tablet;
