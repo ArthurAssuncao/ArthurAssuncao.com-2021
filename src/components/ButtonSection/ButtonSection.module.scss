@@ -10,6 +10,7 @@
     left: 0;
     padding: 1rem 2rem;
     font-weight: bold;
+    font-size: var(--text-h5, $text-h5);
   }
 
   &:before {
@@ -25,5 +26,6 @@
     position: relative;
     transform: translateY(-50%);
     box-shadow: 0 0 1rem var(--color-background-alpha, $color-background-alpha);
+    font-size: var(--text-h5, $text-h5);
   }
 }
