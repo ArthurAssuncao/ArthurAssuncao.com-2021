@@ -8,6 +8,7 @@ import { Icon } from '@iconify/react';
 import classNames from 'classnames';
 import parse from 'html-react-parser';
 import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 import nextId from 'react-id-generator';
 import {
   VerticalTimeline,
@@ -22,8 +23,21 @@ interface MyJourneyProps {
   className?: string;
 }
 
+interface FilterObject {
+  [key: string]: boolean;
+}
+
+interface FilterType {
+  name: string;
+  data: FilterObject;
+}
+
 const MyJourney = (props: MyJourneyProps): JSX.Element => {
   const { className } = props;
+  const [filter, setFilter] = useState<FilterType>({
+    name: 'filter',
+    data: {},
+  });
 
   const defineIcon = (type: string) => {
     if (type == 'education') {
@@ -43,7 +57,39 @@ const MyJourney = (props: MyJourneyProps): JSX.Element => {
     return <Icon className={styles.timelineItemIcon} icon={bxAtom} />;
   };
 
-  const timelineItens = myTimeline.map((item) => {
+  const types = myTimeline
+    .map((item) => {
+      return item.type;
+    })
+    .filter((value, index, self) => {
+      return self.indexOf(value) === index;
+    })
+    .sort();
+
+  const filterToggle = (type: string) => {
+    if (types.includes(type)) {
+      filter.data[type] = !filter.data[type];
+      setFilter((f) => ({ ...f, data: filter.data }));
+    }
+  };
+
+  const FilterItens = types.map((item) => {
+    return (
+      <li
+        key={nextId()}
+        className={styles.timelineFilterListItem}
+        data-active={filter && filter.data[item]}
+        onClick={() => filterToggle(item)}
+      >
+        {item}
+      </li>
+    );
+  });
+
+  const TimelineItens = myTimeline.map((item) => {
+    if (!filter.data[item.type]) {
+      return <></>;
+    }
     return (
       <VerticalTimelineElement
         className={classNames(
@@ -96,13 +142,39 @@ const MyJourney = (props: MyJourneyProps): JSX.Element => {
     );
   });
 
+  useEffect(() => {
+    const types = myTimeline
+      .map((item) => {
+        return item.type;
+      })
+      .filter((value, index, self) => {
+        return self.indexOf(value) === index;
+      })
+      .sort();
+
+    const initFilter: FilterObject = types.reduce<FilterObject>(function (
+      result,
+      item
+    ) {
+      result[item] = true;
+      return result;
+    },
+    {});
+
+    setFilter((f) => ({ ...f, data: initFilter }));
+  }, [filter.name]);
+
   return (
     <section className={classNames(className, styles.container)}>
       <ButtonSection title="Meet My Journey" className={styles.title} />
-
-      <VerticalTimeline className={styles.timeline}>
-        {timelineItens}
-      </VerticalTimeline>
+      <div className={styles.containerInner}>
+        <ul className={styles.timelineFilterList}>{FilterItens}</ul>
+        {Object.values(filter.data).includes(true) && (
+          <VerticalTimeline className={styles.timeline}>
+            {TimelineItens}
+          </VerticalTimeline>
+        )}
+      </div>
     </section>
   );
 };
