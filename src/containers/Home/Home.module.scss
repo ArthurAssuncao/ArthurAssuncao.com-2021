@@ -33,6 +33,7 @@
       &.myJourneyWrapper {
         background-color: var(--color-background-alt, $color-background-alt);
         .myJourney {
+          flex: 1;
           @include desktop-up {
             width: 80vw;
           }

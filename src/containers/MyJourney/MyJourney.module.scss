@@ -8,117 +8,160 @@
   .title {
   }
 
-  .timeline {
-    @media (min-width: 1170px) {
-      margin-top: 2rem;
-    }
+  .containerInner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 
-    --timeline-background: var(--color-background, $color-background);
+    .timelineFilterList {
+      color: var(--color-on-background, $color-on-background);
+      border-bottom: 3px solid var(--color-background, $color-background);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 3rem;
 
-    &:before {
-      background-color: var(--timeline-background, $color-background);
-    }
-
-    .timelineItem {
-      // &:hover {
-      //   --timeline-background: var(
-      //     --color-background-alpha,
-      //     $color-background-alpha
-      //   );
-      // }
-
-      // get icon
-      > span:nth-child(1) {
-        background-color: var(--timeline-background, $color-background);
-        transition: background-color 0.5s ease;
-        box-shadow: 0 0 0 4px var(--timeline-background, $color-background),
-          0 3px 5px 4px var(--color-background-alpha, $color-background-alpha);
-
-        .timelineItemIcon {
-          color: var(--color-accent, $color-accent);
-        }
+      @include tablet-up {
+        justify-content: flex-start;
       }
 
-      .timelineContainer {
-        background-color: var(--timeline-background, $color-background);
+      .timelineFilterListItem {
+        padding: 1rem 1rem;
+        margin: 0 0.5rem;
+        border-radius: 0.5rem;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        cursor: pointer;
+        text-transform: capitalize;
         transition: background-color 0.5s ease;
+        background-color: transparent;
 
-        > div:first-child {
-          border-right: 7px solid var(--timeline-background, $color-background);
+        &[data-active='true'] {
+          background-color: var(--color-background, $color-background);
+        }
+
+        &[data-active='false'] {
+          background-color: var(--color-gray, $color-gray);
         }
       }
+    }
 
-      .timelineItemTitleWrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        hyphens: auto;
+    .timeline {
+      @media (min-width: 1170px) {
+        // margin-top: 2rem;
+      }
 
-        &[data-has-link='true'] {
-          margin-right: 1.3rem;
+      --timeline-background: var(--color-background, $color-background);
+
+      &:before {
+        background-color: var(--timeline-background, $color-background);
+      }
+
+      .timelineItem {
+        // &:hover {
+        //   --timeline-background: var(
+        //     --color-background-alpha,
+        //     $color-background-alpha
+        //   );
+        // }
+
+        // get icon
+        > span:nth-child(1) {
+          background-color: var(--timeline-background, $color-background);
+          transition: background-color 0.5s ease;
+          box-shadow: 0 0 0 4px var(--timeline-background, $color-background),
+            0 3px 5px 4px var(--color-background-alpha, $color-background-alpha);
+
+          .timelineItemIcon {
+            color: var(--color-accent, $color-accent);
+          }
         }
 
-        .timelineItemTitle {
-          font-size: var(--text-h6, $text-h6);
-          font-weight: bold;
+        .timelineContainer {
+          background-color: var(--timeline-background, $color-background);
+          transition: background-color 0.5s ease;
+
+          > div:first-child {
+            border-right: 7px solid
+              var(--timeline-background, $color-background);
+          }
+        }
+
+        .timelineItemTitleWrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          hyphens: auto;
+
+          &[data-has-link='true'] {
+            margin-right: 1.3rem;
+          }
+
+          .timelineItemTitle {
+            font-size: var(--text-h6, $text-h6);
+            font-weight: bold;
+
+            @include tablet-up {
+              font-size: var(--text-h5, $text-h5);
+            }
+          }
+
+          .timelineItemLink {
+            // background-color: var(--color-accent, $color-accent);
+            padding: 0.8rem 1rem 0.5rem 1rem;
+            border-radius: 5px;
+            border-top-right-radius: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: var(--color-accent, $color-accent);
+            transition: all 0.5s ease;
+            font-size: var(--text-h5);
+
+            &:hover {
+              background-color: var(
+                --color-accent-active,
+                $color-accent-active
+              );
+              color: var(--color-on-accent, $color-on-accent);
+            }
+          }
+        }
+        .timelineItemSubtitle {
+          font-size: var(--text-caption, $text-caption);
+          color: var(--color-gray, $color-gray);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .timelineItemSubtitleDate {
+          }
+        }
+
+        .timelineItemDate {
+          font-size: var(--text-caption, $text-caption);
+          padding: 0;
+          display: none;
+        }
+
+        .timelineItemDescription {
+          font-size: var(--text-body, $text-body);
+          line-height: var(--text-h5, $text-h5);
 
           @include tablet-up {
-            font-size: var(--text-h5, $text-h5);
+            font-size: var(--text-caption, $text-caption);
+            line-height: var(--text-h6, $text-h6);
           }
-        }
 
-        .timelineItemLink {
-          // background-color: var(--color-accent, $color-accent);
-          padding: 0.8rem 1rem 0.5rem 1rem;
-          border-radius: 5px;
-          border-top-right-radius: 0;
-          position: absolute;
-          top: 0;
-          right: 0;
-          color: var(--color-accent, $color-accent);
-          transition: all 0.5s ease;
-          font-size: var(--text-h5);
+          a {
+            color: var(--color-on-background, $color-on-background);
+            text-decoration: underline;
+            text-decoration-style: dotted;
 
-          &:hover {
-            background-color: var(--color-accent-active, $color-accent-active);
-            color: var(--color-on-accent, $color-on-accent);
-          }
-        }
-      }
-      .timelineItemSubtitle {
-        font-size: var(--text-caption, $text-caption);
-        color: var(--color-gray, $color-gray);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .timelineItemSubtitleDate {
-        }
-      }
-
-      .timelineItemDate {
-        font-size: var(--text-caption, $text-caption);
-        padding: 0;
-        display: none;
-      }
-
-      .timelineItemDescription {
-        font-size: var(--text-body, $text-body);
-        line-height: var(--text-h5, $text-h5);
-
-        @include tablet-up {
-          font-size: var(--text-caption, $text-caption);
-          line-height: var(--text-h6, $text-h6);
-        }
-
-        a {
-          color: var(--color-on-background, $color-on-background);
-          text-decoration: underline;
-          text-decoration-style: dotted;
-
-          &:hover {
-            text-decoration: none;
-            color: var(--color-accent, $color-accent);
+            &:hover {
+              text-decoration: none;
+              color: var(--color-accent, $color-accent);
+            }
           }
         }
       }
