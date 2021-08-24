@@ -1,7 +1,13 @@
+@import '../../assets/styles/sass/resources';
+
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  @include tablet-up {
+    justify-content: center;
+  }
   .navbar {
   }
 }
