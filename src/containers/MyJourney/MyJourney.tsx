@@ -55,7 +55,10 @@ const MyJourney = (props: MyJourneyProps): JSX.Element => {
         textClassName={styles.timelineContainer}
         dateClassName={styles.timelineItemDate}
       >
-        <div className={styles.timelineItemTitleWrapper}>
+        <div
+          className={styles.timelineItemTitleWrapper}
+          data-has-link={!!item.link}
+        >
           <h3
             className={classNames(
               'vertical-timeline-element-title',
