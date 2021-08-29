@@ -62,6 +62,20 @@
           }
         }
       }
+
+      &.mySkillsWrapper {
+        background-color: var(--color-background-alt, $color-background-alt);
+        color: var(--color-on-background-alt, $color-on-background-alt);
+        position: relative;
+
+        .mySkills {
+          flex: 1;
+          @include desktop-up {
+            width: 80vw;
+            flex: initial;
+          }
+        }
+      }
     }
   }
 

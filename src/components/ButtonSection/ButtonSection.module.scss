@@ -5,6 +5,7 @@
 
   .title {
     display: inline-block;
+    color: var(--color-on-background, $color-on-background);
     position: absolute;
     transform: translateY(-50%);
     left: 0;
