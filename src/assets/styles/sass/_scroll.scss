@@ -1,0 +1,26 @@
+@import './resources';
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  background-color: var(--$color-gray-light, $color-gray-light);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  background-color: var(--color-accent, $color-accent);
+
+  /* Handle on hover */
+  &:hover {
+    background: #555;
+    background-color: var(--color-accent-active, $color-accent-active);
+    cursor: pointer;
+  }
+}

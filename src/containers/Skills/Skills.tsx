@@ -73,7 +73,7 @@ const Skills = (props: SkillsProps): JSX.Element => {
             return (
               <SkillsCard
                 skills={skillList}
-                key={nextId()}
+                key={index}
                 title={skillTitle}
                 description={skillDescription}
                 className={styles.skillsCard}
