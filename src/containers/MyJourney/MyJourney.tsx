@@ -73,10 +73,10 @@ const MyJourney = (props: MyJourneyProps): JSX.Element => {
     }
   };
 
-  const FilterItens = types.map((item) => {
+  const FilterItens = types.map((item, index) => {
     return (
       <li
-        key={nextId()}
+        key={index}
         className={styles.timelineFilterListItem}
         data-active={filter && filter.data[item]}
         onClick={() => filterToggle(item)}

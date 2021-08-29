@@ -6,6 +6,7 @@ import { Hero } from '../Hero';
 import { MyJourney } from '../MyJourney';
 import { MyResults } from '../MyResults';
 import { Skills } from '../Skills';
+import { Videos } from '../Videos';
 import styles from './Home.module.scss';
 
 const Home = (): JSX.Element => {
@@ -37,6 +38,12 @@ const Home = (): JSX.Element => {
           className={classNames(styles.section, styles.mySkillsWrapper)}
         >
           <Skills className={styles.mySkills} />
+        </Element>
+        <Element
+          name="videos"
+          className={classNames(styles.section, styles.videosWrapper)}
+        >
+          <Videos className={styles.videos} />
         </Element>
       </main>
 
