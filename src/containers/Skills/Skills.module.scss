@@ -1,0 +1,68 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  .skillsGroup {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .skillsCards {
+      display: flex;
+      overflow: hidden;
+      transition: transform 1s ease;
+
+      > * {
+        margin: 0.5rem 1.5rem;
+        box-shadow: 0 0 1rem
+          var(--color-container-shadow, $color-container-shadow);
+      }
+
+      --proportionPerCard: calc(100% / var(--number-cards, 3));
+
+      &[data-active='0'] {
+        transform: translateX(var(--proportionPerCard, 33%));
+      }
+
+      &[data-active='2'] {
+        transform: translateX(calc(-1 * var(--proportionPerCard, 33%)));
+      }
+    }
+    .skillsDots {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .skillsDot {
+        display: block;
+        height: 2.4rem;
+        width: 2.4rem;
+        border-radius: 50%;
+        background-color: var(--color-gray, $color-gray);
+        margin: 0rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+
+        &:hover {
+          background-color: var(--color-accent-alpha, $color-accent-alpha);
+        }
+
+        &[data-active='true'] {
+          height: 3.2rem;
+          width: 3.2rem;
+          background-color: var(--color-accent, $color-accent);
+
+          &:hover {
+            background-color: var(--color-accent-active, $color-accent-active);
+          }
+        }
+      }
+    }
+  }
+}
