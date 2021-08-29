@@ -72,6 +72,11 @@ $navbarHeight: 7rem;
       color: var(--color-on-background, $color-on-background);
 
       @include tablet-up {
+        font-size: var(--text-h5, $text-h5);
+        width: 12rem;
+      }
+
+      @include desktop-up {
         font-size: var(--text-h2, $text-h2);
         width: 17rem;
       }
@@ -210,16 +215,25 @@ $navbarHeight: 7rem;
               flex-direction: column;
               align-items: center;
               position: relative;
-              font-size: var(--text-h6, $text-h6);
 
               &:after {
                 content: attr(data-to);
-                letter-spacing: 0.3rem;
+                letter-spacing: 0.2rem;
                 opacity: 0;
-                padding: 0 1.5rem;
+                padding: 0 1rem;
                 transform: translateY(-150%);
                 position: relative;
                 z-index: -1;
+              }
+            }
+
+            @include desktop-up {
+              font-size: var(--text-h6, $text-h6);
+
+              &:after {
+                font-size: var(--text-h6, $text-h6);
+                letter-spacing: 0.3rem;
+                padding: 0 1.5rem;
               }
             }
 

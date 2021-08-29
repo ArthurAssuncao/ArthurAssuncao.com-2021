@@ -1,0 +1,11 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  .chart {
+    flex: 1;
+  }
+}

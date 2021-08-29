@@ -1,0 +1,75 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 90vw;
+
+  @include tablet-up {
+    max-width: initial;
+  }
+
+  .title {
+    font-size: var(--text-h5, $text-h5);
+    line-height: var(--text-h3, $text-h3);
+    font-weight: bold;
+  }
+
+  .description {
+    line-height: var(--text-h1, $text-h1);
+  }
+
+  .list {
+    display: grid;
+    grid-template:
+      'skills1 skills1 skills1 skills2'
+      'skills3 skills3 skills3 skills2'
+      'skills3 skills3 skills3 skills2';
+
+    .skills {
+      display: grid;
+      place-items: center;
+
+      background-color: var(--color-gray-light, $color-gray-light);
+      margin: 0.5rem;
+      padding: 0 1rem;
+
+      @include tablet-up {
+        margin: 1rem;
+      }
+
+      &.skills1 {
+        grid-area: skills1;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      &.skills2 {
+        grid-area: skills2;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 0.5rem;
+
+        @include tablet-up {
+          padding: 1rem;
+        }
+      }
+
+      &.skills3 {
+        grid-area: skills3;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .item {
+        font-size: 5.6rem;
+        height: 5.6rem;
+        margin: 1rem;
+
+        svg {
+          max-width: 5.6rem;
+        }
+      }
+    }
+  }
+}

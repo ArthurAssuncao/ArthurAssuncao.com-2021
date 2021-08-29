@@ -4,6 +4,8 @@ import { Element } from 'react-scroll';
 import { Header } from '../Header';
 import { Hero } from '../Hero';
 import { MyJourney } from '../MyJourney';
+import { MyResults } from '../MyResults';
+import { Skills } from '../Skills';
 import styles from './Home.module.scss';
 
 const Home = (): JSX.Element => {
@@ -23,6 +25,18 @@ const Home = (): JSX.Element => {
           className={classNames(styles.section, styles.myJourneyWrapper)}
         >
           <MyJourney className={styles.myJourney} />
+        </Element>
+        <Element
+          name="myresults"
+          className={classNames(styles.section, styles.myResultsWrapper)}
+        >
+          <MyResults className={styles.myResults} />
+        </Element>
+        <Element
+          name="skills"
+          className={classNames(styles.section, styles.mySkillsWrapper)}
+        >
+          <Skills className={styles.mySkills} />
         </Element>
       </main>
 

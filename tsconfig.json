@@ -20,6 +20,6 @@
   },
 
   "rootDirs": ["src", "stories"],
-  "include": ["src"],
+  "include": ["additional.d.ts", "src"],
   "exclude": ["node_modules", "**/*.js"]
 }
