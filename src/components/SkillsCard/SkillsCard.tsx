@@ -8,12 +8,10 @@ interface SkillsCardProps {
   skills: SkillItem[];
   title: string;
   description: string;
-  onClick: () => void;
-  'data-active': boolean;
 }
 
 const SkillsCard = (props: SkillsCardProps): JSX.Element => {
-  const { className, skills, title, description, onClick } = props;
+  const { className, skills, title, description } = props;
   const skillsNumber = skills.length;
 
   const groupOneInitial = 0;
@@ -39,11 +37,7 @@ const SkillsCard = (props: SkillsCardProps): JSX.Element => {
   };
 
   return (
-    <div
-      className={classNames(className, styles.container)}
-      data-active={props['data-active']}
-      onClick={onClick}
-    >
+    <div className={classNames(className, styles.container)}>
       <span className={styles.title}>{title}</span>
       <span className={styles.description}>{description}</span>
       <div className={styles.list}>
