@@ -22,6 +22,7 @@ const Skills = (props: SkillsProps): JSX.Element => {
         time={carouselTime}
         className={styles.skillsGroup}
         classNameItemsContainer={styles.skillsCards}
+        autoPlay={false}
       >
         {Object.keys(mySkillsByConfortable).map((key, index) => {
           const skillList = mySkillsByConfortable[key];

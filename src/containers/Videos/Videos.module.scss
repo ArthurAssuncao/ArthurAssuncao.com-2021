@@ -7,6 +7,10 @@
 
   .videosCarousel {
     margin-bottom: 2rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .videos {
       margin: 3rem 0 1rem 0;

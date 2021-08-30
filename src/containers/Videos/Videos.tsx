@@ -23,6 +23,7 @@ const Videos = (props: VideosProps): JSX.Element => {
         time={carouselTime}
         className={styles.videosCarousel}
         classNameItemsContainer={styles.videos}
+        autoPlay={true}
       >
         {videos.map((item, index) => (
           <Video video={item} key={index} />

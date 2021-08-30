@@ -16,7 +16,7 @@ $color-background-alt-contrast: #f7f8fa;
 
 // On colors and texts
 $color-on-primary: #fff;
-$color-on-accent: #222;
+$color-on-accent: #fff;
 $color-on-background: #fff;
 $color-on-background-alt: #222;
 $color-text-gray: #a7a7a7;
@@ -37,12 +37,13 @@ $color-info: #33b5e5;
 // Neutral colors
 $color-gray: #a7a7a7;
 $color-gray-light: #f1f1f1;
+$color-gray-dark: #7e7e7e;
 
 // Gradients
 $gradient: linear-gradient(
   to right,
-  var(--color-accent, $color-accent) 0%,
-  var(--color-secondary, $color-secondary) 100%
+  #fdc830 0%,
+  var(--color-accent, $color-accent) 100%
 );
 
 // Dark colors
@@ -72,5 +73,6 @@ $color-dark-success: #007e33;
 $color-dark-info: #0099cc;
 
 // Dark Neutral colors
-$color-dark-gray: #5a5a5a;
+$color-dark-gray: #7e7e7e;
 $color-dark-gray-light: #aaaaaa;
+$color-dark-gray-dark: #5a5a5a;

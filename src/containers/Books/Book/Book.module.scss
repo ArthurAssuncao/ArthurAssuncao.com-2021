@@ -1,0 +1,160 @@
+@import '../../../assets/styles/sass/resources';
+
+.container {
+  min-width: 360px;
+  display: flex;
+
+  .cover {
+    display: flex;
+    height: 220px;
+    width: 160px;
+    margin-right: 5rem;
+
+    transform-style: preserve-3d;
+    transform: perspective(220px) rotateY(-10deg);
+    position: relative;
+
+    .logoWrapper {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+    }
+
+    .border {
+      position: absolute;
+      left: -5px;
+      top: 0px;
+      height: 220px;
+      width: 5px;
+      background: var(--color-gray, $color-gray);
+    }
+
+    .front {
+      height: 220px;
+      width: 160px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      background: linear-gradient(
+        to right,
+        var(--color-background, $color-accent) 0%,
+        var(--color-background-alpha, $color-accent-alpha) 100%
+      );
+      border: 1px solid var(--color-gray-line, $color-gray-line);
+      color: white;
+      text-shadow: 1px 1px white,
+        -1px -1px var(--color-gray-dark, $color-gray-dark);
+      font-size: var(--text-caption, $text-caption);
+
+      .title {
+        hyphens: none;
+        text-transform: uppercase;
+        font-size: var(--text-body, $text-body);
+      }
+
+      .authorYearWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .author {
+        }
+
+        .year {
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: var(--color-gray, $color-gray);
+        top: 0;
+        left: 0;
+        width: 0px;
+        height: 180px;
+        box-shadow: 0px 0px 50px 20px var(--color-gray, $color-gray);
+        transform: rotateX(90deg) rotateZ(90deg) translateZ(-130px)
+          translateX(-10px) translateY(-60px);
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: var(--color-gray, $color-gray);
+        top: 0;
+        left: 0;
+        width: 0px;
+        height: 180px;
+        box-shadow: 0px 0px 50px 20px var(--color-gray, $color-gray);
+        transform: rotateX(90deg) rotateZ(90deg) translateZ(-130px)
+          translateX(-40px) translateY(-120px);
+      }
+    }
+
+    .pages {
+      z-index: -1;
+      position: absolute;
+      height: 220px;
+      width: 160px;
+      background-color: var(--color-gray-line, $color-gray-line);
+
+      .page {
+        height: 220px;
+        width: 160px;
+        position: absolute;
+        background-color: white;
+        border: 1px solid var(--color-gray-line, $color-gray-line);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      @for $i from 1 through 6 {
+        .page:nth-child(#{$i}) {
+          left: calc(16px - (#{$i} -1) * 2px);
+          top: calc(7px - (#{$i} -1) * 1px);
+          height: calc(200px + (#{$i} -1) * 3px);
+        }
+      }
+    }
+
+    .back {
+      z-index: -2;
+      position: absolute;
+      left: 18px;
+      top: 10px;
+      width: 160px;
+      height: 194px;
+      background-color: white;
+      border: 1px solid var(--color-gray, $color-gray);
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .details {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        color: var(--color-accent);
+        font-weight: bold;
+        margin-bottom: 1rem;
+        font-size: var(--text-h6, $text-h6);
+      }
+
+      .description {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .button {
+    }
+  }
+}

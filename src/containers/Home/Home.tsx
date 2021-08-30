@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Element } from 'react-scroll';
+import { Books } from '../Books';
 import { Header } from '../Header';
 import { Hero } from '../Hero';
 import { MyJourney } from '../MyJourney';
@@ -40,10 +41,16 @@ const Home = (): JSX.Element => {
           <Skills className={styles.mySkills} />
         </Element>
         <Element
-          name="videos"
+          name="courses"
           className={classNames(styles.section, styles.videosWrapper)}
         >
           <Videos className={styles.videos} />
+        </Element>
+        <Element
+          name="books"
+          className={classNames(styles.section, styles.booksWrapper)}
+        >
+          <Books className={styles.books} />
         </Element>
       </main>
 
