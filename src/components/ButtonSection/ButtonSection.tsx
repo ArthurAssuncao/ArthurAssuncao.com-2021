@@ -8,10 +8,14 @@ interface ButtonSectionProps {
 
 const ButtonSection = (props: ButtonSectionProps): JSX.Element => {
   const { className, title } = props;
+  const buttonTitle = `{ ${title} }`;
 
   return (
-    <div className={classNames(className, styles.container)} data-title={title}>
-      <span className={styles.title}>{title}</span>
+    <div
+      className={classNames(className, styles.container)}
+      data-title={buttonTitle}
+    >
+      <span className={styles.title}>{buttonTitle}</span>
     </div>
   );
 };

@@ -43,6 +43,7 @@
     "react-scroll": "^1.8.3",
     "react-swipeable": "^6.2.0",
     "react-vertical-timeline-component": "^3.3.3",
+    "react-youtube": "^7.13.1",
     "sass": "^1.37.5",
     "typescript": "^4.4.2",
     "worker-timers": "^7.0.37"

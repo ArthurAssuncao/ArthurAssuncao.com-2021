@@ -7,6 +7,7 @@
   --color-primary: #{$color-primary};
   --color-accent: #{$color-accent};
   --color-accent-active: #{$color-accent-active};
+  --color-accent-alpha: #{$color-accent-alpha};
   --color-secondary: #{$color-secondary};
   --color-secondary-light: #{$color-secondary-light};
 
@@ -39,6 +40,7 @@
   // Neutral colors
   --color-gray: #{$color-gray};
   --color-gray-light: #{$color-gray-light};
+  --color-gray-dark: #{$color-gray-dark};
 
   // Gradients
   --gradient: #{$gradient};
@@ -132,6 +134,7 @@
   // Neutral colors
   --color-dark-gray: #{$color-dark-gray};
   --color-dark-gray-light: #{$color-dark-gray-light};
+  --color-dark-gray-dark: #{$color-dark-gray-dark};
 
   // Gradients
   // --gradient-dark: #{$gradient-dark};

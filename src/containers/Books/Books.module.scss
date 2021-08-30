@@ -1,0 +1,31 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  .books {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 60vh;
+
+    @include desktop-up {
+      flex-direction: row;
+    }
+
+    .book {
+      padding: 3rem 1.5rem;
+      border-bottom: 1px solid var(--color-gray-light, $color-gray-light);
+
+      @include desktop-up {
+        padding: 1rem 1.5rem;
+        border: none;
+      }
+    }
+  }
+}
