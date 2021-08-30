@@ -10,12 +10,20 @@ interface CarouselProps {
   className?: string;
   classNameItemsContainer?: string;
   numberItems: number;
-  time: number;
+  time?: number;
+  autoPlay: boolean;
 }
 
 const Carousel = (props: CarouselProps): JSX.Element => {
-  const { className, classNameItemsContainer, numberItems, time, children } =
-    props;
+  const {
+    className,
+    classNameItemsContainer,
+    numberItems,
+    time,
+    children,
+    autoPlay,
+  } = props;
+  const defaultTime = 3000;
   const [active, setActive] = useState(Math.floor(numberItems / 2));
 
   const itemToggle = (index: number) => {
@@ -81,13 +89,15 @@ const Carousel = (props: CarouselProps): JSX.Element => {
   let countDownTimeout = useRef<number>();
 
   useEffect(() => {
-    if (countDownTimeout && countDownTimeout.current) {
-      workerTimers.clearTimeout(countDownTimeout.current);
-    }
+    if (autoPlay) {
+      if (countDownTimeout && countDownTimeout.current) {
+        workerTimers.clearTimeout(countDownTimeout.current);
+      }
 
-    countDownTimeout.current = workerTimers.setTimeout(() => {
-      nextitem();
-    }, time);
+      countDownTimeout.current = workerTimers.setTimeout(() => {
+        nextitem();
+      }, time || defaultTime);
+    }
   });
 
   return (

@@ -30,6 +30,10 @@
       align-items: flex-start;
       justify-content: center;
 
+      @include tablet-up {
+        // min-height: 80vh;
+      }
+
       &.myJourneyWrapper {
         background-color: var(--color-background-alt, $color-background-alt);
         flex: 1;
@@ -83,6 +87,20 @@
         position: relative;
 
         .videos {
+          flex: 1;
+          @include desktop-up {
+            width: 80vw;
+            flex: initial;
+          }
+        }
+      }
+
+      &.booksWrapper {
+        background-color: var(--color-background-alt, $color-background-alt);
+        color: var(--color-on-background-alt, $color-on-background-alt);
+        position: relative;
+
+        .books {
           flex: 1;
           @include desktop-up {
             width: 80vw;
