@@ -17,7 +17,7 @@ const Videos = (props: VideosProps): JSX.Element => {
 
   return (
     <section className={classNames(className, styles.container)}>
-      <ButtonSection title="Cursos" className={styles.title} />
+      <ButtonSection title="Courses" className={styles.title} />
       <Carousel
         numberItems={numberVideos}
         time={carouselTime}
