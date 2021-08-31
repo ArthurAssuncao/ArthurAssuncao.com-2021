@@ -3,6 +3,7 @@ declare module '*.png';
 declare module '*.webp';
 declare module '*.jpg';
 declare module '*.gif';
+declare module '*.pdf';
 
 declare module '*.css' {
   const classes: { [key: string]: string };
