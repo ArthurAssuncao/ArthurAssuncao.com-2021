@@ -60,6 +60,7 @@
 
         .myResults {
           flex: 1;
+
           @include desktop-up {
             width: 80vw;
             flex: initial;
@@ -102,6 +103,7 @@
 
         .books {
           flex: 1;
+          z-index: 1;
           @include desktop-up {
             width: 80vw;
             flex: initial;

@@ -15,7 +15,8 @@
     min-height: 60vh;
 
     @include desktop-up {
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
 
     .book {

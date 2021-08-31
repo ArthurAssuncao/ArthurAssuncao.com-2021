@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { ButtonSection } from '../../components/ButtonSection';
 import { Carousel } from '../../components/Carousel';
+import { DescriptionSection } from '../../components/DescriptionSection';
 import { SkillsCard } from '../../components/SkillsCard';
 import styles from './Skills.module.scss';
 import { mySkillsByConfortable, titleDescriptions } from './SkillsData';
@@ -17,6 +18,9 @@ const Skills = (props: SkillsProps): JSX.Element => {
   return (
     <section className={classNames(className, styles.container)}>
       <ButtonSection title="Skills" className={styles.title} />
+      <DescriptionSection className={styles.description}>
+        I know a lot of things and technologies
+      </DescriptionSection>
       <Carousel
         numberItems={numberCards}
         time={carouselTime}

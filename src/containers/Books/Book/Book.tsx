@@ -55,7 +55,7 @@ const Book = (props: BookProps): JSX.Element => {
         </div>
         <Button animated={false} className={styles.button}>
           <Link href={url} passHref={true}>
-            <a>Access</a>
+            <a>Read now! It&apos;s free.</a>
           </Link>
         </Button>
       </div>
