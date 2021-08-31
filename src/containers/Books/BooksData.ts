@@ -9,8 +9,8 @@ interface BookData {
 
 const myBooks: BookData[] = [
   {
-    name: 'A mais didática introdução à programação de computadores',
-    url: 'https://arthurassuncao.gitbook.io/a-mais-didatica-introducao-a-programacao-de-comput/',
+    name: 'Programação para quem não tem facilidade',
+    url: 'https://arthurassuncao.gitbook.io/programacao-para-quem-nao-tem-facilidade/',
     state: 'in progress',
     description:
       'Introdução utilizando um conjunto de metodologias incríveis para o aprendizado de programação.',

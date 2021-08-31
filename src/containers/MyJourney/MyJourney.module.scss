@@ -19,13 +19,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 3rem;
-
-      @include tablet-up {
-        justify-content: flex-start;
-      }
+      margin-top: 3.5rem;
 
       .timelineFilterListItem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 1rem 1rem;
         margin: 0 0.5rem;
         border-radius: 0.5rem;
@@ -42,6 +41,22 @@
 
         &[data-active='false'] {
           background-color: var(--color-gray, $color-gray);
+        }
+
+        &:hover {
+          background-color: var(--color-gray-dark, $color-gray-dark);
+        }
+
+        .timelineFilterIcon {
+          display: none;
+
+          @include tablet-up {
+            margin-top: 0.3rem;
+            margin-right: 0.5rem;
+          }
+        }
+
+        .timelineFilterText {
         }
       }
     }
@@ -74,6 +89,12 @@
 
           .timelineItemIcon {
             color: var(--color-accent, $color-accent);
+          }
+
+          svg.timelineItemIcon {
+            @include desktop-up {
+              transform: scale(1.4);
+            }
           }
         }
 

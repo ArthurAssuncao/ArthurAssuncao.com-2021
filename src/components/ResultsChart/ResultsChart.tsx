@@ -32,43 +32,43 @@ const ResultsChart = (props: ResultsChartProps): JSX.Element => {
     youtubeLessons,
   } = props;
 
-  const firstLinePositionX = 20;
-  const secondLinePositionX = 100;
+  const firstLinePositionY = -50; // 20
+  const secondLinePositionY = 50; // 100
 
   const data: Results = {
     projects: {
       x: 20,
-      y: firstLinePositionX,
+      y: firstLinePositionY,
       text: 'Amazing projects',
       value: projects,
     },
     yearsDeveloping: {
       x: 170,
-      y: firstLinePositionX,
+      y: firstLinePositionY,
       text: 'Years of development',
       value: yearsDeveloping,
     },
     youtubeCourses: {
       x: 300,
-      y: firstLinePositionX,
+      y: firstLinePositionY,
       text: 'Courses on YouTube',
       value: youtubeCourses,
     },
     students: {
       x: 20,
-      y: secondLinePositionX,
+      y: secondLinePositionY,
       text: 'Impacted students',
       value: students,
     },
     yearsTeaching: {
       x: 170,
-      y: secondLinePositionX,
+      y: secondLinePositionY,
       text: 'Years teaching',
       value: yearsTeaching,
     },
     youtubeLessons: {
       x: 300,
-      y: secondLinePositionX,
+      y: secondLinePositionY,
       text: 'Lessons on YouTube',
       value: youtubeLessons,
     },
@@ -77,7 +77,7 @@ const ResultsChart = (props: ResultsChartProps): JSX.Element => {
   return (
     <div className={classNames(className, styles.container)}>
       <svg
-        viewBox="0 0 414 178"
+        viewBox="0 -100 414 278"
         preserveAspectRatio="xMidYMid meet"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

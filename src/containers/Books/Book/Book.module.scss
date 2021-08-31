@@ -3,16 +3,37 @@
 .container {
   min-width: 360px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  @include tablet-up {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  @include desktop-up {
+    min-width: 420px;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    width: initial;
+  }
 
   .cover {
     display: flex;
     height: 220px;
     width: 160px;
-    margin-right: 5rem;
-
+    margin-bottom: 3rem;
     transform-style: preserve-3d;
     transform: perspective(220px) rotateY(-10deg);
     position: relative;
+
+    @include tablet-up {
+      margin-right: 5rem;
+    }
 
     .logoWrapper {
       position: absolute;
@@ -45,7 +66,7 @@
       );
       border: 1px solid var(--color-gray-line, $color-gray-line);
       color: white;
-      text-shadow: 1px 1px white,
+      text-shadow: 0px 0px white,
         -1px -1px var(--color-gray-dark, $color-gray-dark);
       font-size: var(--text-caption, $text-caption);
 
@@ -137,6 +158,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+
+    @include desktop-up {
+      width: initial;
+    }
 
     .details {
       display: flex;
