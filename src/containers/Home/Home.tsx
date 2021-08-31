@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { Element } from 'react-scroll';
 import { Books } from '../Books';
+import { Footer } from '../Footer';
 import { Header } from '../Header';
 import { Hero } from '../Hero';
 import { MyJourney } from '../MyJourney';
@@ -55,6 +56,9 @@ const Home = (): JSX.Element => {
       </main>
 
       {/* Footer */}
+      <Element name="footer" className={classNames(styles.footerWrapper)}>
+        <Footer />
+      </Element>
     </div>
   );
 };

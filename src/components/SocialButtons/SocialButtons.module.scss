@@ -1,0 +1,74 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconWrapper {
+  &.cvIconWrapper,
+  &.lattesIconWrapper {
+    > *,
+    > * > *,
+    img.image {
+      height: 4.7rem !important;
+      width: 4.2rem !important;
+      max-width: initial !important;
+      max-height: initial !important;
+    }
+    img.image {
+      top: 3px !important;
+    }
+  }
+
+  &.sbIconWrapper {
+    margin: 0 1.5rem;
+
+    @include tablet-up {
+      margin: 0 3rem;
+    }
+
+    .image {
+      font-size: 4.8rem;
+
+      transition: color 0.5s ease;
+      color: var(--color-gray-light, $color-gray-light);
+      display: flex;
+
+      &:hover {
+        color: var(--color-gray, $color-gray);
+      }
+
+      svg {
+        fill: var(--color-gray-light, $color-gray-light);
+        transition: fill 0.5s ease;
+        &:hover {
+          fill: var(--color-gray, $color-gray);
+        }
+
+        path {
+          fill: var(--color-gray-light, $color-gray-light);
+          transition: fill 0.5s ease;
+          &:hover {
+            fill: var(--color-gray, $color-gray);
+          }
+        }
+      }
+
+      &.linkedinIcon {
+        font-size: 4.2rem;
+      }
+
+      &.lattesIcon,
+      &.cvIcon {
+        filter: invert(1);
+        transition: filter 0.5s ease;
+
+        &:hover {
+          filter: invert(0.7);
+        }
+      }
+    }
+  }
+}

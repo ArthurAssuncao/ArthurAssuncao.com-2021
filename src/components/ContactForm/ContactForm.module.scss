@@ -1,0 +1,110 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3rem 3rem;
+  width: 100%;
+
+  @include tablet-up {
+    max-width: $max-page-size-tablet;
+  }
+
+  @include desktop-up {
+    max-width: $max-page-size-desktop;
+  }
+
+  @include desktop-big-up {
+    max-width: $max-page-size-desktop-big;
+  }
+
+  .nameEmailWrapper {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-up {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .fieldWrapper {
+        flex: 0 0 48%;
+
+        .field {
+        }
+      }
+    }
+  }
+
+  .fieldWrapper {
+    width: inherit;
+    margin: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .field {
+      width: 100%;
+      min-height: 2rem;
+      border-radius: 0.7rem;
+      outline: none;
+      border: none;
+      margin: 0.75rem 0;
+      padding: 1rem 1.5rem;
+      background-color: var(--color-gray-light, $color-gray-light);
+      color: var(--color-on-background-alt, $color-on-background-alt);
+
+      @include tablet-up {
+        min-height: 5rem;
+      }
+
+      &::placeholder {
+        color: var(--color-gray-dark, $color-gray-dark);
+      }
+
+      &[data-error='true'] {
+        border: 1px solid var(--color-error, $color-error);
+        box-shadow: 0 0 1rem var(--color-error, $color-error);
+      }
+    }
+
+    .inputField--focus {
+      &:focus {
+        box-shadow: 0 0 1rem var(--color-secondary, $color-secondary);
+      }
+    }
+
+    .nameField,
+    .emailField,
+    .messageField {
+      @extend .field;
+      @extend .inputField--focus;
+    }
+
+    .fieldError {
+      background-color: var(--color-error, $color-error);
+      color: var(--color-on-accent, $color-on-accent);
+      padding: 0.3rem 1rem;
+      border-radius: 0.5rem;
+      max-width: 98%;
+    }
+
+    .messageField {
+      line-height: 1.5;
+
+      @include tablet-up {
+        min-height: 15rem;
+      }
+    }
+  }
+
+  .submitButton {
+    .submitButtonIcon {
+      font-size: 3rem;
+      margin-right: 1rem;
+    }
+  }
+}
