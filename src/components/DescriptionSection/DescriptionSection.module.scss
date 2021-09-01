@@ -1,8 +1,12 @@
 @import '../../assets/styles/sass/resources';
 
 .container {
-  font-size: var(--text-h4, $text-h4);
+  font-size: var(--text-h5, $text-h5);
   max-width: 90vw;
   text-align: center;
   margin: 0.5rem 0;
+
+  @include tablet-up {
+    font-size: var(--text-h4, $text-h4);
+  }
 }

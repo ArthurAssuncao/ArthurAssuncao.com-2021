@@ -2,6 +2,17 @@
 
 .container {
   .chart {
+    min-height: 30rem;
+    max-width: 100%;
+
+    @include tablet-up {
+      min-height: 50rem;
+    }
+
+    @include desktop-up {
+      min-height: 60rem;
+    }
+
     .texts {
       .textWrapper {
         display: flex;
