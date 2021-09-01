@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { HeroAbout } from '../../components/HeroAbout';
 import { HeroHello } from '../../components/HeroHello';
+import { HeroStory } from '../../components/HeroStory';
 import styles from './Hero.module.scss';
 
 interface HeroProps {
@@ -17,6 +18,9 @@ const Hero = (props: HeroProps): JSX.Element => {
       </div>
       <div className={styles.heroAboutWrapper}>
         <HeroAbout className={styles.heroAbout} />
+      </div>
+      <div className={styles.heroStoryWrapper}>
+        <HeroStory className={styles.heroStory} />
       </div>
     </section>
   );

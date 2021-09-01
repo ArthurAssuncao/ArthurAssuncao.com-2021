@@ -71,3 +71,30 @@ button {
 body {
   transition: background-color 0.5s ease;
 }
+
+blockquote {
+  padding: 0.5rem 10px;
+  position: relative;
+  font-style: italic;
+  display: inline-block;
+
+  &:before,
+  &:after {
+    position: absolute;
+    color: white;
+    font-size: 4rem;
+    font-style: normal;
+  }
+
+  &:before {
+    content: '“';
+    left: -1rem;
+    top: 1.2rem;
+  }
+
+  &:after {
+    content: '”';
+    right: -1rem;
+    bottom: -0.5rem;
+  }
+}
