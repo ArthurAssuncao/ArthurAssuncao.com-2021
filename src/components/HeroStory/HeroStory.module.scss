@@ -1,0 +1,26 @@
+@import '../../assets/styles/sass/resources';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    font-size: var(--text-h5, $text-h5);
+    margin-bottom: 2rem;
+    color: var(--color-accent, $color-accent);
+  }
+
+  .text {
+    .paragraph {
+      color: var(--color-gray-light-medium, $color-gray-light-medium);
+      line-height: var(--text-h3, $text-h3);
+      text-align: center;
+      display: block;
+    }
+
+    .quotation {
+    }
+  }
+}

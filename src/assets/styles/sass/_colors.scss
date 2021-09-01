@@ -1,7 +1,7 @@
 @import 'mixins';
 
 // Primary, accent, secondary and its variants
-$color-primary: #131313;
+$color-primary: #1f1f1f;
 $color-accent: #ff5f1f;
 $color-accent-active: darken(#ff5f1f, 15);
 $color-accent-alpha: rgba(255, 95, 31, 0.7);
@@ -9,7 +9,7 @@ $color-secondary: #1fbfff;
 $color-secondary-light: lighten(#1fbfff, 10);
 
 // Background
-$color-background: #131313;
+$color-background: #1f1f1f;
 $color-background-alpha: toRGBA($color-background, 0.9);
 $color-background-alt: #fff;
 $color-background-alt-contrast: #f7f8fa;
@@ -37,6 +37,7 @@ $color-info: #33b5e5;
 // Neutral colors
 $color-gray: #a7a7a7;
 $color-gray-light: #f1f1f1;
+$color-gray-light-medium: #dcdde0;
 $color-gray-dark: #7e7e7e;
 
 // Gradients
@@ -75,4 +76,5 @@ $color-dark-info: #0099cc;
 // Dark Neutral colors
 $color-dark-gray: #7e7e7e;
 $color-dark-gray-light: #aaaaaa;
+$color-dark-light-medium: #6e6e6e;
 $color-dark-gray-dark: #5a5a5a;
