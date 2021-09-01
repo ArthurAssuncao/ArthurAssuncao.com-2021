@@ -11,7 +11,7 @@ const VideoComp = (props: VideoProps) => {
   const { video } = props;
 
   const videoOptions: Options = {
-    height: '214',
+    height: '202',
     width: '360',
     playerVars: {
       autoplay: 0,
@@ -20,12 +20,15 @@ const VideoComp = (props: VideoProps) => {
 
   return (
     <div className={styles.container}>
-      <span className={styles.title}>{video.name}</span>
       <YouTube
         videoId={video.id}
         className={styles.video}
         opts={videoOptions}
       />
+      <div className={styles.info}>
+        <span className={styles.title}>{video.name}</span>
+        <span className={styles.description}>{video.description}</span>
+      </div>
     </div>
   );
 };

@@ -60,6 +60,7 @@
 
         .myResults {
           flex: 1;
+
           @include desktop-up {
             width: 80vw;
             flex: initial;
@@ -102,12 +103,22 @@
 
         .books {
           flex: 1;
+
           @include desktop-up {
             width: 80vw;
             flex: initial;
           }
         }
       }
+    }
+  }
+
+  .footerWrapper {
+    background-color: var(--color-background, $color-background);
+    color: var(--color-on-background, $color-on-background);
+    position: relative;
+
+    .footer {
     }
   }
 

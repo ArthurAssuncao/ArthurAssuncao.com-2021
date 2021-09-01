@@ -5,17 +5,15 @@ const path = require('path');
 const prod = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  webpack: function (config) {
+  webpack: (config, options) => {
     config.module.rules.push({
-      test: /\.(eot|woff|woff2|ttf|mp3|svg)$/,
-      use: {
-        loader: 'url-loader',
-        options: {
-          limit: 100000,
-          name: '[name].[ext]',
-        },
+      test: /\.(jpe?g|png|svg|gif|ico|eot|ttf|woff|woff2|mp4|pdf|webm|txt)$/,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/chunks/[path][name].[hash][ext]',
       },
     });
+
     return config;
   },
   sassOptions: {

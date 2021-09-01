@@ -2,23 +2,41 @@
 
 .container {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-bottom: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
-  .skillsGroup {
-    margin-top: 3rem;
+  .content {
+    padding: 4rem 0 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 74vh;
 
-    .skillsCards {
-      .skillsCard {
-        margin: 0.5rem 1.5rem;
-        box-shadow: 0 0 1rem
-          var(--color-container-shadow, $color-container-shadow);
+    @include tablet-up {
+      padding: 5rem 0 4rem 0;
+    }
+
+    .description {
+    }
+
+    .skillsGroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
+
+      @include tablet-up {
+        padding: 4rem 0;
+      }
+
+      .skillsCards {
+        .skillsCard {
+          margin: 0.5rem 1.5rem;
+          box-shadow: 0 0 1rem
+            var(--color-container-shadow, $color-container-shadow);
+        }
       }
     }
   }

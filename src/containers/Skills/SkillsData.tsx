@@ -4,6 +4,7 @@ import contentfulIcon from '@iconify/icons-logos/contentful';
 import css3 from '@iconify/icons-logos/css-3';
 import dockerIcon from '@iconify/icons-logos/docker-icon';
 import es6Icon from '@iconify/icons-logos/es6';
+import figmaIcon from '@iconify/icons-logos/figma';
 import gitIcon from '@iconify/icons-logos/git-icon';
 import html5 from '@iconify/icons-logos/html-5';
 import javascriptIcon from '@iconify/icons-logos/javascript';
@@ -20,7 +21,6 @@ import trelloIcon from '@iconify/icons-logos/trello';
 import typescriptIcon from '@iconify/icons-logos/typescript-icon';
 import visualStudioCode from '@iconify/icons-logos/visual-studio-code';
 import yarnIcon from '@iconify/icons-logos/yarn';
-import responsiveIcon from '@iconify/icons-mdi/responsive';
 import scrumallianceIcon from '@iconify/icons-simple-icons/scrumalliance';
 import testinglibraryIcon from '@iconify/icons-simple-icons/testinglibrary';
 import fileTypeMongo from '@iconify/icons-vscode-icons/file-type-mongo';
@@ -125,9 +125,9 @@ const mySkills: SkillItemComplete[] = [
     icon: <Icon icon={gitIcon} />,
   },
   {
-    technology: 'Responsive Layout',
+    technology: 'Figma',
     levelConfortable: 'More Confortable',
-    icon: <Icon icon={responsiveIcon} />,
+    icon: <Icon icon={figmaIcon} />,
   },
   {
     technology: 'SASS',

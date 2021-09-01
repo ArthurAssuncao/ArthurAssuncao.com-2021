@@ -81,7 +81,8 @@ const MyJourney = (props: MyJourneyProps): JSX.Element => {
         data-active={filter && filter.data[item]}
         onClick={() => filterToggle(item)}
       >
-        {item}
+        <span className={styles.timelineFilterIcon}>{defineIcon(item)}</span>
+        <span className={styles.timelineFilterText}>{item}</span>
       </li>
     );
   });

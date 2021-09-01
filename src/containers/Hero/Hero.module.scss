@@ -4,47 +4,43 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-bottom: 2rem;
+
+  .heroAboutWrapper,
+  .heroHelloWrapper,
+  .heroStoryWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2.5rem;
+
+    .heroAbout,
+    .heroHello,
+    .heroStory {
+      @include tablet-up {
+        max-width: $max-page-size-tablet;
+      }
+      @include desktop-big-up {
+        max-width: $max-page-size-desktop-big;
+        width: $max-page-size-desktop;
+      }
+    }
+  }
 
   .heroHelloWrapper {
     background-color: var(--color-background-alt, $color-background-alt);
     color: var(--color-on-background-alt, $color-on-background-alt);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     @include tablet-up {
       min-height: 25rem;
     }
-
-    .heroHello {
-      @include tablet-up {
-        max-width: $max-page-size-tablet;
-      }
-      @include desktop-big-up {
-        max-width: $max-page-size-desktop-big;
-        width: $max-page-size-desktop;
-      }
-    }
   }
 
   .heroAboutWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .heroAbout {
-      @include tablet-up {
-        max-width: $max-page-size-tablet;
-      }
-      @include desktop-big-up {
-        max-width: $max-page-size-desktop-big;
-        width: $max-page-size-desktop;
-      }
-    }
+    padding: 3rem 2.5rem 1.5rem 2.5rem;
   }
 
-  .heroHelloWrapper,
-  .heroAboutWrapper {
-    padding: 3rem 2.5rem;
+  .heroStoryWrapper {
+    padding: 1.5rem 2.5rem 3rem 2.5rem;
   }
 }

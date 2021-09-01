@@ -2,12 +2,28 @@
 
 .container {
   .chart {
+    min-height: 30rem;
+    max-width: 100%;
+
+    @include tablet-up {
+      min-height: 50rem;
+    }
+
+    @include desktop-up {
+      min-height: 60rem;
+    }
+
     .texts {
       .textWrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        text-align: center;
+
+        @include tablet-up {
+          text-align: left;
+        }
 
         .textValue {
           font-size: var(--text-h4, $text-h4);
@@ -17,7 +33,7 @@
           }
 
           @include desktop-up {
-            font-size: var(--text-body, $text-body);
+            font-size: var(--text-description, $text-description);
           }
         }
 
@@ -27,11 +43,11 @@
           font-size: var(--text-body, $text-body);
 
           @include tablet-up {
-            font-size: var(--text-small, $text-small);
+            font-size: 0.9rem;
           }
 
           @include desktop-up {
-            font-size: var(--text-small, $text-small);
+            font-size: 0.8rem;
           }
         }
       }
