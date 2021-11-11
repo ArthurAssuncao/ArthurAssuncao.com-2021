@@ -77,7 +77,6 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
   });
 
   const submitForm = async (data: ContactFormData, resetForm: ResetForm) => {
-    console.log(data);
     try {
       const res = await handleSubmit(data);
       if (res) {

@@ -68,7 +68,7 @@ const SocialButtons = (props: SocialButtonsProps): JSX.Element => {
       <SocialButton
         name="Curriculum"
         className={classNames(styles.iconWrapper, styles.cvIconWrapper)}
-        href="../../assets/files/resume_arthur_assuncao_one-page.pdf"
+        href="https://drive.google.com/file/d/1lNr-yCFdtvqEtCvbyfd4Zv4sPmZ5L4YT/view?usp=sharing"
       >
         <Image
           src={CvIcon}

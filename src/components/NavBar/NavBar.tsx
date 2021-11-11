@@ -58,18 +58,18 @@ const NavBar = (props: NavBarProps): JSX.Element => {
       </Link>
 
       <div className={styles.menuWrapper}>
-        <div
+        <button
           className={styles.menuIconWrapper}
           onClick={() => toggleSideMenu()}
         >
           <MenuHamburguer className={styles.menuIcon} opened={sideMenuOpened} />
-        </div>
+        </button>
         <div
           className={styles.menu}
           data-sidemenuopened={sideMenuOpened}
           data-sidemenuwilldisappear={sideMenuWillDisappear}
         >
-          <div
+          <button
             className={styles.menuOverlay}
             onClick={() => toggleSideMenu()}
           />

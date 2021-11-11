@@ -1,0 +1,41 @@
+@import '../../assets/styles/sass/resources';
+
+@keyframes bg-pan-left {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  background-color: var(--color-background, $color-background);
+
+  @include mobile-up {
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .headerHero {
+    width: 100%;
+    background: var(--color-background, $color-background);
+    background-size: 200% 100%;
+    animation: bg-pan-left 8s alternate infinite;
+  }
+
+  .buttonToTop {
+    position: fixed;
+    bottom: 7rem;
+    right: 1.5rem;
+
+    @include tablet-up {
+      bottom: 1.5rem;
+    }
+  }
+}

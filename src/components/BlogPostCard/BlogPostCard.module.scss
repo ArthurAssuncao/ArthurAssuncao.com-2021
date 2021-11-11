@@ -1,0 +1,104 @@
+@import '../../assets/styles/sass/resources';
+
+$min-height: 37rem;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: clamp(30rem, 30rem, 30vw);
+  max-width: 90vw;
+  min-height: $min-height;
+  background-color: var(--color-background-alt, $color-background-alt);
+  color: var(--color-on-background-alt, $color-on-background-alt);
+
+  @include tablet-up {
+    max-width: 36rem;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: $min-height;
+
+    &:hover {
+      .overlay {
+        cursor: pointer;
+        z-index: 1;
+        opacity: 1;
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      opacity: 0;
+      transition: 0.5s ease;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(
+        --color-accent-alpha-light,
+        $color-accent-alpha-light
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .icon {
+        font-size: 5rem;
+      }
+    }
+
+    .image {
+      position: relative;
+      img {
+        min-height: 10rem !important;
+        height: initial !important;
+        margin: 0 !important;
+      }
+    }
+
+    .info {
+      padding: 0.5rem 1rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      font-size: var(--text-description, $text-description);
+      border-bottom: 1px solid var(--color-gray-line, $color-gray-line);
+      color: var(--color-text-gray, $color-text-gray);
+
+      .infoInner {
+        align-self: flex-end;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        .tag {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    .titleDescription {
+      padding: 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        font-size: var(--text-h6, $text-h6);
+        line-height: var(--text-h4, $text-h4);
+        font-weight: bold;
+      }
+
+      .description {
+        font-size: var(--text-description, $text-description);
+        color: var(--color-text-gray, $color-text-gray);
+        line-height: var(--text-h5, $text-h5);
+        margin: 1rem 0;
+      }
+    }
+  }
+}

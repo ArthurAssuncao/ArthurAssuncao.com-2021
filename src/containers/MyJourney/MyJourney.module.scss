@@ -47,6 +47,13 @@
           background-color: var(--color-gray-dark, $color-gray-dark);
         }
 
+        .timelineFilterListItemButton {
+          background-color: transparent;
+          color: var(--color-on-background, color-on-background);
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+
         .timelineFilterIcon {
           display: none;
 

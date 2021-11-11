@@ -24,7 +24,11 @@ const Carousel = (props: CarouselProps): JSX.Element => {
     autoPlay,
   } = props;
   const defaultTime = 3000;
-  const [active, setActive] = useState(Math.floor(numberItems / 2));
+  const middle =
+    numberItems % 2 == 0
+      ? Math.floor(numberItems / 2) - 1
+      : Math.floor(numberItems / 2);
+  const [active, setActive] = useState(middle);
 
   const itemToggle = (index: number) => {
     if (index !== active && index < numberItems && index >= 0) {
@@ -56,16 +60,22 @@ const Carousel = (props: CarouselProps): JSX.Element => {
   const generatePosition = () => {
     const proportionSpaceVideo = 100 / numberItems;
     const middle = Math.floor(numberItems / 2);
+    const isPar = numberItems % 2 == 0;
+    const valueAdjust = isPar ? 100 / (numberItems * 2) : 0;
+
     if (active === middle) {
-      return '0%';
+      return isPar ? `${-valueAdjust}%` : `${valueAdjust}%`;
     }
     let multiplier = 1;
     if (active > middle) {
       multiplier = -1;
-      const value = (active - middle) * proportionSpaceVideo * multiplier;
+      const value =
+        ((active - middle) * proportionSpaceVideo + valueAdjust) * multiplier;
       return `${value}%`;
     }
-    const value = (middle - active) * proportionSpaceVideo * multiplier;
+    // active > middle
+    const value =
+      ((middle - active) * proportionSpaceVideo - valueAdjust) * multiplier;
     return `${value}%`;
   };
 

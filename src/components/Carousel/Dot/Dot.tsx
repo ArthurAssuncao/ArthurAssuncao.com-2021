@@ -12,13 +12,13 @@ const Dot = (props: DotProps): JSX.Element => {
   const { className, index, onClick, active } = props;
 
   return (
-    <div
+    <button
       className={classNames(className, styles.container)}
       key={index}
       data-active={active}
       onClick={() => onClick()}
       aria-label={`To ${index} video`}
-    ></div>
+    ></button>
   );
 };
 
