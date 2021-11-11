@@ -1,3 +1,4 @@
 import { BlogPosts } from './BlogPosts';
+import { generatePostUrl, generatePostUrlComplete } from './util';
 
-export { BlogPosts };
+export { BlogPosts, generatePostUrl, generatePostUrlComplete };
