@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Element } from 'react-scroll';
+import { Article } from '../../lib/DevToApi/interfaces';
+import { BlogPosts } from '../BlogPosts';
 import { Books } from '../Books';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
@@ -11,7 +13,12 @@ import { Skills } from '../Skills';
 import { Videos } from '../Videos';
 import styles from './Home.module.scss';
 
-const Home = (): JSX.Element => {
+interface HomeProps {
+  posts: Article[];
+}
+
+const Home = (props: HomeProps): JSX.Element => {
+  const { posts } = props;
   return (
     <div className={styles.container}>
       {/* Header */}
@@ -40,6 +47,12 @@ const Home = (): JSX.Element => {
           className={classNames(styles.section, styles.mySkillsWrapper)}
         >
           <Skills className={styles.mySkills} />
+        </Element>
+        <Element
+          name="posts"
+          className={classNames(styles.section, styles.myBlogPostsWrapper)}
+        >
+          <BlogPosts className={styles.myBlogPosts} posts={posts} />
         </Element>
         <Element
           name="courses"

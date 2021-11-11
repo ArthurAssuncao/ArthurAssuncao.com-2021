@@ -5,6 +5,7 @@ $color-primary: #1f1f1f;
 $color-accent: #ff5f1f;
 $color-accent-active: darken(#ff5f1f, 15);
 $color-accent-alpha: rgba(255, 95, 31, 0.7);
+$color-accent-alpha-light: rgba(255, 95, 31, 0.2);
 $color-secondary: #1fbfff;
 $color-secondary-light: lighten(#1fbfff, 10);
 
@@ -25,7 +26,8 @@ $color-text-disabled: #dbdbdb;
 $color-text-highlight: #ff5f1f;
 
 // Others colors
-$color-gray-line: #dcdde0;
+$color-gray-line: #f5f5f5;
+$color-gray-line2: #dcdde0;
 $color-container-shadow: rgba(15, 154, 215, 0.2);
 
 // Semantic Colors

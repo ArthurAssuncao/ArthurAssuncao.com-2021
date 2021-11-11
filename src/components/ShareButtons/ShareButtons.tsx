@@ -22,11 +22,10 @@ const ShareButtons = (props: ShareButtonsProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
 
   const shareButtonStyle = {
-    '--share-button-size': `var(${widthCSSVar}, 3.2rem)`,
+    '--share-button-size': `var(${widthCSSVar}, 4rem)`,
   } as CSSProperties;
 
   const openButtons = () => {
-    // if (e.target !== e.currentTarget) return;
     setIsOpen(!isOpen);
   };
 

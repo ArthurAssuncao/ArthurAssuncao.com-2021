@@ -24,6 +24,13 @@ const nextConfig = {
 module.exports = withPlugins(
   [
     [
+      {
+        images: {
+          domains: ['res.cloudinary.com', 'dev-to-uploads.s3.amazonaws.com'],
+        },
+      },
+    ],
+    [
       withPWA,
       {
         pwa: {

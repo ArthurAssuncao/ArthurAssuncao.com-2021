@@ -100,36 +100,56 @@ $num-itens: 5;
     }
   }
 
-  .shareList,
-  &:hover {
-    &:hover,
-    &[data-open='true'] {
-      // max-height: inherit;
+  .shareItem-default {
+    @for $i from 1 through $num-itens {
+      $newI: $num-itens - ($i - 1);
+      &:nth-child(#{$newI}) {
+        opacity: 0;
+        animation: fade-in 0.5s #{($num-itens - $i) * 0.2}s ease forwards;
 
-      .shareItem {
-        @for $i from 1 through $num-itens {
-          $newI: $num-itens - ($i - 1);
-          &:nth-child(#{$newI}) {
-            opacity: 0;
-            animation: fade-in 0.5s #{($num-itens - $i) * 0.2}s ease forwards;
+        .shareItemIcon {
+          animation: fade-in-icon 1s #{($num-itens - $i) * 0.1}s ease forwards;
+        }
+      }
+    }
+    @include tablet-up {
+      @for $i from 1 through $num-itens {
+        $newI: $i;
 
-            .shareItemIcon {
-              animation: fade-in-icon
-                1s
-                #{($num-itens - $i) *
-                0.1}s
-                ease
-                forwards;
-            }
+        &:nth-child(#{$newI}) {
+          opacity: 0;
+          animation: fade-in 0.5s #{($num-itens - $i) * 0.2}s ease forwards;
+
+          .shareItemIcon {
+            animation: fade-in-icon
+              1s
+              #{($num-itens - $i) *
+              0.1}s
+              ease
+              forwards;
           }
         }
       }
+    }
+  }
 
+  .shareList {
+    &[data-open='true'] {
+      // max-height: inherit;
       .shareItem {
-        @include tablet-up {
-          @for $i from 1 through $num-itens {
-            $newI: $i;
+        @extend .shareItem-default;
+      }
+    }
+  }
 
+  @include tablet-up {
+    &:hover {
+      &:hover {
+        // max-height: inherit;
+        .shareItem {
+          // @extend .shareItem-default;
+          @for $i from 1 through $num-itens {
+            $newI: $num-itens - ($i - 1);
             &:nth-child(#{$newI}) {
               opacity: 0;
               animation: fade-in 0.5s #{($num-itens - $i) * 0.2}s ease forwards;
@@ -141,6 +161,30 @@ $num-itens: 5;
                   0.1}s
                   ease
                   forwards;
+              }
+            }
+          }
+          @include tablet-up {
+            @for $i from 1 through $num-itens {
+              $newI: $i;
+
+              &:nth-child(#{$newI}) {
+                opacity: 0;
+                animation: fade-in
+                  0.5s
+                  #{($num-itens - $i) *
+                  0.2}s
+                  ease
+                  forwards;
+
+                .shareItemIcon {
+                  animation: fade-in-icon
+                    1s
+                    #{($num-itens - $i) *
+                    0.1}s
+                    ease
+                    forwards;
+                }
               }
             }
           }
