@@ -34,7 +34,10 @@
 
       .book {
         padding: 3rem 1.5rem;
-        border-bottom: 1px solid var(--color-gray-light, $color-gray-light);
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--color-gray-light, $color-gray-light);
+        }
 
         @include desktop-up {
           padding: 1rem 1.5rem;

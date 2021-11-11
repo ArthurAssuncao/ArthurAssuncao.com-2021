@@ -29,6 +29,7 @@ const Books = (props: BooksProps): JSX.Element => {
               url={item.url}
               year={item.year}
               publisher={item.publisher}
+              cover={item.cover}
               className={styles.book}
             />
           ))}
