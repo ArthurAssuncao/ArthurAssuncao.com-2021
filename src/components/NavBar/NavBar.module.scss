@@ -98,14 +98,18 @@ $navbarHeight: 7rem;
       width: 100%;
     }
 
-    .menuIcon {
-      color: $color-on-background;
-      color: var(--color-on-background, $color-on-background);
-      width: 48px;
-      height: 48px;
+    .menuIconWrapper {
+      background-color: transparent;
 
-      @include tablet-up {
-        display: none;
+      .menuIcon {
+        color: $color-on-background;
+        color: var(--color-on-background, $color-on-background);
+        width: 48px;
+        height: 48px;
+
+        @include tablet-up {
+          display: none;
+        }
       }
     }
 
