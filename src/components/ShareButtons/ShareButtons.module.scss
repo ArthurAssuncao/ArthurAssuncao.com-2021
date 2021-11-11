@@ -1,0 +1,214 @@
+@import '../../assets/styles/sass/resources';
+
+$num-itens: 5;
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem) scale(1);
+  }
+}
+
+@keyframes fade-in-icon {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0rem) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(5rem) scale(0);
+  }
+}
+
+@keyframes fade-out-icon {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.container {
+  width: calc(var(--share-button-size, fit-content) + 1rem);
+  padding: 1rem 0;
+  overflow: hidden;
+  min-height: fit-content;
+  position: relative;
+  font-size: auto;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @include tablet-up {
+    flex-direction: column-reverse;
+  }
+
+  .shareList,
+  &[data-open='false'] {
+    .shareItem {
+      @for $i from 1 through $num-itens {
+        $newI: $i;
+        &:nth-child(#{$newI}) {
+          animation: fade-out 0.5s #{($num-itens - $i) * 0.2}s ease forwards;
+
+          .shareItemIcon {
+            animation: fade-out-icon
+              1s
+              #{($num-itens - $i) *
+              0.1}s
+              ease
+              forwards;
+          }
+        }
+      }
+    }
+
+    .shareItem {
+      @include tablet-up {
+        @for $i from 1 through $num-itens {
+          $newI: $num-itens - ($i - 1);
+          &:nth-child(#{$newI}) {
+            animation: fade-out 0.5s #{($num-itens - $i) * 0.2}s ease forwards;
+
+            .shareItemIcon {
+              animation: fade-out-icon
+                1s
+                #{($num-itens - $i) *
+                0.1}s
+                ease
+                forwards;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .shareList,
+  &:hover {
+    &:hover,
+    &[data-open='true'] {
+      // max-height: inherit;
+
+      .shareItem {
+        @for $i from 1 through $num-itens {
+          $newI: $num-itens - ($i - 1);
+          &:nth-child(#{$newI}) {
+            opacity: 0;
+            animation: fade-in 0.5s #{($num-itens - $i) * 0.2}s ease forwards;
+
+            .shareItemIcon {
+              animation: fade-in-icon
+                1s
+                #{($num-itens - $i) *
+                0.1}s
+                ease
+                forwards;
+            }
+          }
+        }
+      }
+
+      .shareItem {
+        @include tablet-up {
+          @for $i from 1 through $num-itens {
+            $newI: $i;
+
+            &:nth-child(#{$newI}) {
+              opacity: 0;
+              animation: fade-in 0.5s #{($num-itens - $i) * 0.2}s ease forwards;
+
+              .shareItemIcon {
+                animation: fade-in-icon
+                  1s
+                  #{($num-itens - $i) *
+                  0.1}s
+                  ease
+                  forwards;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .shareIconWrapper {
+    overflow: hidden;
+    height: fit-content;
+    width: fit-content;
+
+    background-color: var(--color-background-alt, $color-background-alt);
+    box-shadow: 0 0 1rem var(--color-container-shadow, $color-container-shadow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-size: var(--share-button-size, fit-content);
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 10px var(--color-accent-active, $color-accent-active);
+    }
+
+    .shareIcon {
+      padding: 1rem;
+      color: var(--color-accent, $color-accent);
+      transition: all 0.5s ease;
+
+      &:hover {
+        color: var(--color-accent-active, $color-accent-active);
+      }
+    }
+  }
+
+  .shareList {
+    width: fit-content;
+    height: fit-content;
+
+    .shareItem {
+      .shareItemLink {
+        background-color: var(--color-background-alt, $color-background-alt);
+        height: var(--share-button-size, fit-content);
+        width: var(--share-button-size, fit-content);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
+        transition: all 0.5s ease;
+        padding: 0.7rem;
+        box-shadow: 0 0 1rem
+          var(--color-container-shadow, $color-container-shadow);
+
+        &:hover {
+          color: var(--color-accent-active, $color-accent-active);
+          box-shadow: 0px 0px 10px
+            var(--color-accent-active, $color-accent-active);
+          cursor: pointer;
+        }
+
+        .shareItemIcon {
+          font-size: var(--share-button-size, auto);
+        }
+      }
+    }
+  }
+}
