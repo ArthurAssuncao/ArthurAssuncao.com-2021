@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from 'react';
 import nextId from 'react-id-generator';
 import { DevToHTMLParser } from '../../components/DevToHTMLParser';
 import { ShareButtons } from '../../components/ShareButtons';
+import { generatePostUrlComplete } from '../../containers/BlogPosts';
 import { PageTemplate } from '../../containers/PageTemplate';
 import { Article } from '../../lib/DevToApi';
 import styles from './Post.module.scss';
-import { generatePostUrlComplete } from './util';
 
 interface PostProps {
   post: Article;

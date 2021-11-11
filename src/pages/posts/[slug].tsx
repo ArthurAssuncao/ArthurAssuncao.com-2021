@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticPropsResult } from 'next';
 import ErrorPage from 'next/error';
+import { Post } from '../../containers/Post';
 import { Article, DevTo } from '../../lib/DevToApi';
-import { Post } from './Post';
 
 const devToApiKey = process.env.DEV_TO_API_KEY;
 const devToUsername = process.env.DEV_TO_USERNAME;

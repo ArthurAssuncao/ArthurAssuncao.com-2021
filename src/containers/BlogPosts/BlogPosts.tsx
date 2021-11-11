@@ -4,8 +4,8 @@ import { ButtonSection } from '../../components/ButtonSection';
 import { Carousel } from '../../components/Carousel';
 import { DescriptionSection } from '../../components/DescriptionSection';
 import { Article } from '../../lib/DevToApi/interfaces';
-import { generatePostUrl } from './../../pages/posts/util';
 import styles from './BlogPosts.module.scss';
+import { generatePostUrl } from './util';
 
 interface BlogPostProps {
   className?: string;
