@@ -1,0 +1,53 @@
+@import '../../assets/styles/sass/resources';
+
+@keyframes to-top-slide-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1.5rem);
+  }
+}
+
+.container {
+  height: 6.4rem;
+  width: 6.4rem;
+  z-index: $z-index-over;
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.5s ease;
+
+  &[data-show='false'] {
+    opacity: 0;
+
+    .icon {
+      font-size: 0;
+    }
+  }
+
+  &[data-show='true'] {
+    opacity: 1;
+
+    .icon {
+      font-size: 4.8rem;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .icon {
+      animation: to-top-slide-up 0.5s ease-out alternate infinite;
+      filter: drop-shadow(0px 5px 3px var(--color-accent, $color-accent));
+    }
+  }
+
+  .icon {
+    color: var(--color-accent, $color-accent);
+    transition: all 0.5s ease;
+  }
+}
