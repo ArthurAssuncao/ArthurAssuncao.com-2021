@@ -17,7 +17,7 @@ interface PostProps {
 
 const Post = (props: PostProps): JSX.Element => {
   const { post, meta } = props;
-  const postImageURl = post.cover_image;
+  const postImageUrl = post.cover_image;
   const publishDate = post.readable_publish_date;
   const textHtml = post.body_html;
   const minutesToRead = post.reading_time_minutes;
@@ -25,6 +25,10 @@ const Post = (props: PostProps): JSX.Element => {
   const [onScroll, setOnScroll] = useState(false);
 
   let shareButtonRef = useRef<HTMLDivElement | null>(null);
+
+  const textWithDevToReference = (textHtml: string): string => {
+    return `${textHtml}<p>Este texto também pode ser lido no <a href="${post.url}">Dev.to</a>.</p>`;
+  };
 
   const fixNameLastName = (name: string) => {
     const nameSplitted = name.split(' ');
@@ -78,10 +82,10 @@ const Post = (props: PostProps): JSX.Element => {
         <article className={styles.content}>
           <div className={styles.imageWrapper}>
             <Image
-              src={postImageURl}
+              src={postImageUrl}
               alt={post.title}
-              height={140}
-              width={320}
+              height={420}
+              width={960}
               layout="responsive"
               // objectFit="contain"
               className={styles.image}
@@ -92,10 +96,10 @@ const Post = (props: PostProps): JSX.Element => {
               <div className={styles.imageTypeWrapper}>
                 <div className={styles.imageWrapper}>
                   <Image
-                    src={postImageURl}
+                    src={postImageUrl}
                     alt={post.title}
-                    height={140}
-                    width={320}
+                    height={420}
+                    width={960}
                     layout="responsive"
                     // objectFit="contain"
                     className={styles.image}
@@ -141,7 +145,9 @@ const Post = (props: PostProps): JSX.Element => {
             </header>
 
             <div className={styles.body}>
-              <DevToHTMLParser text={textHtml}></DevToHTMLParser>
+              <DevToHTMLParser
+                text={textHtml && textWithDevToReference(textHtml)}
+              ></DevToHTMLParser>
             </div>
             <footer></footer>
           </div>

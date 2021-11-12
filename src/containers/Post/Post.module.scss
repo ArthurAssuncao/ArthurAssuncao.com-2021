@@ -51,6 +51,14 @@ $desktop-img-height: 480px;
 
     .imageWrapper {
       display: flex;
+      width: 100%;
+      height: auto;
+
+      > span,
+      > div {
+        width: 100% !important;
+      }
+
       @include tablet-up {
         display: none;
       }
@@ -77,6 +85,11 @@ $desktop-img-height: 480px;
 
         .imageWrapper {
           display: none;
+
+          > span,
+          > div {
+            width: 100% !important;
+          }
 
           @include tablet-up {
             display: flex;
@@ -168,6 +181,11 @@ $desktop-img-height: 480px;
         .title {
           font-weight: bold;
           margin-bottom: 1rem;
+          font-size: var(--text-h2, $text-h2);
+
+          @include tablet-up {
+            font-size: var(--text-h1, $text-h1);
+          }
         }
 
         .info {
